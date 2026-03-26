@@ -1,0 +1,614 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/home.css';
+
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.thecuina.com/consultoria-ia-madrid/#sobre-the-cuina",
+      "name": "The Cuina AI",
+      "alternateName": "The Cuina",
+      "url": "https://www.thecuina.com/consultoria-ia-madrid",
+      "logo": "https://www.thecuina.com/assets/images/logo_ia_the_cuina.png",
+      "description": "Consultora estratégica de Inteligencia Artificial en Madrid. Acompañamos a empresas madrileñas en la adopción de agentes y automatizaciones IA con impacto real en negocio.",
+      "telephone": "+34-623-789-247",
+      "email": "info@thecuina.com",
+      "priceRange": "€€",
+      "inLanguage": "es",
+      "areaServed": [
+        { "@type": "City", "name": "Madrid" },
+        { "@type": "City", "name": "Lleida" },
+        { "@type": "City", "name": "Zaragoza" },
+        { "@type": "Country", "name": "España" }
+      ],
+      "serviceType": [
+        "Consultoría de Inteligencia Artificial en Madrid",
+        "Implementación de Agentes IA",
+        "Automatización de procesos empresariales con Inteligencia Artificial"
+      ],
+      "founder": { "@id": "https://www.thecuina.com/#founder" },
+      "sameAs": [
+        "https://www.instagram.com/thecuina",
+        "https://www.linkedin.com/company/thecuina"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thecuina.com/consultoria-ia-madrid",
+      "url": "https://www.thecuina.com/consultoria-ia-madrid",
+      "name": "The Cuina AI - Consultora de Inteligencia Artificial en Madrid",
+      "description": "Impulsa tu negocio con IA en Madrid. En The Cuina AI acompañamos estratégicamente a empresas madrileñas a adoptar soluciones de IA con resultados medibles.",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://www.thecuina.com/consultoria-ia-madrid/#sobre-the-cuina" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.thecuina.com/consultoria-ia-madrid/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué estoy perdiendo hoy por no integrar IA en mi empresa de Madrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tiempo, eficiencia y competitividad. En un mercado tan dinámico como Madrid, cada semana sin IA es una semana en la que tu competencia gana velocidad. Los procesos manuales que hoy ocupan horas pueden resolverse en minutos con agentes de IA bien implementados."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La IA es solo para grandes empresas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Las PYMEs son las que más se benefician porque el impacto relativo en sus procesos es mayor y los costes de implementación son proporcionales a su tamaño."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo se tarda en implementar la IA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestro Sprint IA entrega resultados medibles en 30 días. Sin pilotos eternos ni fases de análisis interminables."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta implementar inteligencia artificial en una empresa en Madrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El coste depende del caso de uso y la complejidad. En The Cuina AI trabajamos con packs desde un Sprint IA puntual hasta modelos continuos de IA as a Service. La mayoría de clientes en Madrid recuperan la inversión en los primeros 60-90 días."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué contratar a The Cuina AI como consultora de IA en Madrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque trabajamos desde el criterio de negocio, no desde la tecnología. Tenemos presencia en Madrid y conocemos las dinámicas del tejido empresarial local. Cada implementación está vinculada a una métrica clara — margen, productividad o ingresos. Si no genera impacto tangible, no lo implementamos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajáis de forma presencial en Madrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tenemos presencia activa en Madrid y trabajamos tanto de forma presencial como remota con organizaciones de toda España. Nuestro equipo puede reunirse contigo en Madrid para el diagnóstico inicial y los hitos clave del proyecto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué ROI puedo esperar de un proyecto de IA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Típicamente nuestros clientes recuperan la inversión en los primeros 60-90 días gracias a la reducción de tiempo en tareas manuales y la automatización de procesos repetitivos."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Consultoría IA Madrid - The Cuina AI | Agentes e Inteligencia Artificial para Empresas"
+  description="Consultora estratégica de Inteligencia Artificial en Madrid. Implementamos agentes IA y automatizaciones para empresas madrileñas con resultados medibles en 30 días."
+  schema={schema}
+>
+
+<!-- ══════════════════════════════════════════
+     HERO  
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    
+    <div class="hero-badge">
+      Consultoría estratégica IA para empresas en Madrid
+      <span class="solo-desktop">· Madrid · Zaragoza · Lleida</span>
+    </div>
+
+    <h1>Consultora de Inteligencia Artificial en Madrid para empresas con impacto real</h1>
+
+    <p>Ayudamos a empresas en Madrid a automatizar procesos, desplegar agentes de IA y convertir la inteligencia artificial en productividad, velocidad operativa y mejores decisiones.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-cta">Solicitar Diagnóstico →</a>
+      <a href="#soluciones" class="btn-outline">Explorar soluciones IA</a>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════
+     IMPACT
+══════════════════════════════════════════ -->
+   <section class="carousel-section">
+
+ <!-- LOGO WALL -->
+  <div class="logowall">
+    <div class="container">
+      <h2 class="logowall-title">Los mejores modelos y herramientas IA</h2>
+      <ul class="logowall-list">
+        <li><img src="/assets/images/logo-client-1.png" alt="Cliente 1" width="120" height="40" loading="eager" /></li>
+        <li><img src="/assets/images/logo-client-2.png" alt="Cliente 2" width="120" height="40" loading="eager" /></li>
+        <li><img src="/assets/images/logo-client-3.png" alt="Cliente 3" width="120" height="40" loading="eager" /></li>
+        <li><img src="/assets/images/logo-client-4.png" alt="Cliente 4" width="120" height="40" loading="eager" /></li>
+        <li><img src="/assets/images/logo-client-5.png" alt="Cliente 5" width="120" height="40" loading="eager" /></li>
+        <li><img src="/assets/images/logo-client-6.png" alt="Cliente 6" width="120" height="40" loading="eager" /></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="container">
+
+    <p class="carousel-overtitle">Beneficios Inteligencia Artificial</p>
+    <h2 class="carousel-title">La IA optimiza tus procesos e impulsa los ingresos de tu empresa en Madrid</h2>
+
+    <div class="carousel-meta-row">
+      <p class="carousel-description">Casos de empresas que han adoptado IA con The Cuina y han transformado sus operaciones en semanas.</p>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carousel-prev" aria-label="Anterior" disabled>
+          <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="m7.198 19.594 9.313-9.579-2.455-2.525L.553 21.38l13.503 13.89 2.455-2.525-9.313-9.579H39.44v-3.571H7.198Z" fill="currentColor"/>
+          </svg>
+        </button>
+        <button class="carousel-btn" id="carousel-next" aria-label="Siguiente">
+          <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="m32.796 19.594-9.313-9.579 2.455-2.525L39.44 21.38l-13.503 13.89-2.455-2.525 9.313-9.579H.553v-3.571h32.243Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="carousel-track">
+
+        <a href="#contacto" class="carousel-card">
+          <img src="/assets/images/impact-comercial.jpg" alt="Agente IA Comercial" loading="lazy" />
+          <div class="carousel-card-overlay">
+            <span class="carousel-card-tag">Comercial</span>
+            <h3>Propuestas comerciales en 20 minutos, no en 6 horas</h3>
+            <span class="carousel-card-cta">Ver Agente IA<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.6075 11.8572L13.255 8.40897L14.1388 7.5L19 12.5L14.1388 17.5L13.255 16.591L16.6075 13.1428H5V11.8572H16.6075Z" fill="currentColor"/></svg></span>
+          </div>
+        </a>
+
+        <a href="#contacto" class="carousel-card">
+          <img src="/assets/images/impact-atencion-cliente.jpg" alt="Atención cliente 24/7" loading="lazy" />
+          <div class="carousel-card-overlay">
+            <span class="carousel-card-tag">Atención al cliente</span>
+            <h3>Atención 24/7 sin ampliar plantilla</h3>
+            <span class="carousel-card-cta">Ver Agente IA<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.6075 11.8572L13.255 8.40897L14.1388 7.5L19 12.5L14.1388 17.5L13.255 16.591L16.6075 13.1428H5V11.8572H16.6075Z" fill="currentColor"/></svg></span>
+          </div>
+        </a>
+
+        <a href="#contacto" class="carousel-card">
+          <img src="/assets/images/impact-reporting.jpg" alt="Reporting IA" loading="lazy" />
+          <div class="carousel-card-overlay">
+            <span class="carousel-card-tag">Reporting</span>
+            <h3>KPIs en tiempo real desde el móvil, sin analistas</h3>
+            <span class="carousel-card-cta">Ver Agente IA<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.6075 11.8572L13.255 8.40897L14.1388 7.5L19 12.5L14.1388 17.5L13.255 16.591L16.6075 13.1428H5V11.8572H16.6075Z" fill="currentColor"/></svg></span>
+          </div>
+        </a>
+
+        <a href="#contacto" class="carousel-card">
+          <img src="/assets/images/impact-onboarding.jpg" alt="Onboarding IA" loading="lazy" />
+          <div class="carousel-card-overlay">
+            <span class="carousel-card-tag">Onboarding</span>
+            <h3>Activación de nuevos clientes un 60% más rápida</h3>
+            <span class="carousel-card-cta">Ver Agente IA<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.6075 11.8572L13.255 8.40897L14.1388 7.5L19 12.5L14.1388 17.5L13.255 16.591L16.6075 13.1428H5V11.8572H16.6075Z" fill="currentColor"/></svg></span>
+          </div>
+        </a>
+
+        <a href="#contacto" class="carousel-card">
+          <img src="/assets/images/impact-reuniones.jpg" alt="Agente IA reuniones" loading="lazy" />
+          <div class="carousel-card-overlay">
+            <span class="carousel-card-tag">Reuniones</span>
+            <h3>Cada reunión termina con tareas y responsables claros</h3>
+            <span class="carousel-card-cta">Ver Agente IA<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.6075 11.8572L13.255 8.40897L14.1388 7.5L19 12.5L14.1388 17.5L13.255 16.591L16.6075 13.1428H5V11.8572H16.6075Z" fill="currentColor"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════
+     CASOS DE USO
+══════════════════════════════════════════ -->
+<section class="casos" id="casos">
+  <div class="container">
+    <div class="casos-intro fade-in">
+      <div>
+        <div class="section-label">NUESTROS AGENTES IA EN MADRID</div>
+        <h2 class="section-title">Agentes IA para los procesos<br>que más te cuestan</h2>
+      </div>
+      <p class="section-sub">Arrancamos por fricciones operativas reales en tu empresa de Madrid: priorizamos, implementamos y medimos impacto para que cada decisión de IA tenga retorno tangible.</p>
+    </div>
+
+    <div class="casos-grid fade-in">
+      <div class="caso-card">
+        <span class="caso-tag">Comercial</span>
+        <h3>Sistema de Seguimiento Comercial Inteligente</h3>
+        <div class="caso-problem"><strong>Problema:</strong> Procesos comerciales lentos, muchas horas prospectando y clientes perdidos.</div>
+        <ul class="caso-list">
+          <li>Generación profesional de propuestas</li>
+          <li>Emails de seguimiento estratégicos</li>
+          <li>Resúmenes automáticos tras reuniones</li>
+        </ul>
+        <span class="caso-arrow">+</span>
+      </div>
+
+      <div class="caso-card">
+        <span class="caso-tag">Reuniones</span>
+        <h3>Agente IA para Reuniones Que Convierten</h3>
+        <div class="caso-problem"><strong>Problema:</strong> Muchas reuniones que generan buenas ideas pero poca ejecución real.</div>
+        <ul class="caso-list">
+          <li>Notas de la reunión al instante</li>
+          <li>Extracción automática de decisiones</li>
+          <li>Generación de tareas con responsable</li>
+        </ul>
+        <span class="caso-arrow">+</span>
+      </div>
+
+      <div class="caso-card">
+        <span class="caso-tag">Atención cliente</span>
+        <h3>Sistema IA de Atención al Cliente 24/7</h3>
+        <div class="caso-problem"><strong>Problema:</strong> WhatsApps constantes, saturación del equipo, respuestas fuera de horario.</div>
+        <ul class="caso-list">
+          <li>Respuestas a preguntas frecuentes</li>
+          <li>Confirmaciones y cambios de cita</li>
+          <li>Filtrado de urgencias reales</li>
+        </ul>
+        <span class="caso-arrow">+</span>
+      </div>
+
+      <div class="caso-card">
+        <span class="caso-tag">Reporting</span>
+        <h3>Agente IA para Reporting e Inteligencia de Negocio</h3>
+        <div class="caso-problem"><strong>Problema:</strong> Horas invertidas en reporting manual. Decisiones basadas en intuición.</div>
+        <ul class="caso-list">
+          <li>Consulta de KPIs desde tu móvil</li>
+          <li>Resumen diario de indicadores clave</li>
+          <li>Alertas ante incidencias críticas</li>
+          <li>Informe estratégico mensual</li>
+        </ul>
+        <span class="caso-arrow">+</span>
+      </div>
+
+      <div class="caso-card">
+        <span class="caso-tag">Onboarding</span>
+        <h3>Sistema IA - Onboarding nuevos clientes</h3>
+        <div class="caso-problem"><strong>Problema:</strong> Alta fricción inicial por el intercambio manual de documentación.</div>
+        <ul class="caso-list">
+          <li>Envío de formulario dinámico</li>
+          <li>Validación automática de datos</li>
+          <li>Solicitud de documentación faltante</li>
+          <li>Generación de ficha interna</li>
+        </ul>
+        <span class="caso-arrow">+</span>
+      </div>
+
+      <div class="caso-card cta-card">
+        <div>
+          <h3 style="color: var(--text);text-align: center;">¿Quieres conocer casos reales para tu negocio en Madrid?</h3>
+          <p style="font-size:0.9rem;color:var(--text);text-align: center;margin-top:10px;line-height:1.6;font-weight:300;">Analizamos tu negocio y te mostramos qué agentes generan ROI inmediato, cuáles escalar después y cuáles no merece la pena implementar.</p>
+        </div>
+        <a href="#packs" class="btn-outline" style="margin-top:24px; text-align: center;">Packs Consulting AI</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════
+     METODOLOGIA
+══════════════════════════════════════════ -->
+<section class="metodologia" id="metodologia">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Nuestra metodología</div>
+      <h2 class="section-title">Nuestra forma de adoptar<br>la IA en negocios de Madrid</h2>
+    </div>
+    <div class="metodo-grid fade-in">
+      <div class="metodo-steps">
+        <div class="metodo-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Aware</h3>
+            <p>Analizamos tu organización para detectar procesos, oportunidades y quick wins donde la IA genere impacto medible desde el primer día.</p>
+          </div>
+        </div>
+        <div class="metodo-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Define</h3>
+            <p>Priorizamos, ordenamos y avanzamos con claridad: un roadmap convierte la incertidumbre en pasos concretos, seguros y enfocados al ROI.</p>
+          </div>
+        </div>
+        <div class="metodo-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Activate</h3>
+            <p>Probamos rápido, validamos resultados y escalamos solo lo que funciona, con tu equipo preparado y la estrategia alineada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="metodo-visual">
+             <div class="sobre-img">
+        <img src="/assets/blog/post-ia-decision-estrategica-cuina.jpg" alt="The Cuina method" width="560" height="315">
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS CONSULTING -->
+<section class="packs" id="packs">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Nuestros packs</div>
+      <h2 class="section-title">Elige el modelo que<br>encaja con tu empresa</h2>
+      <p class="section-sub">Una estructura clara: comparativa directa, enfoque práctico y visibilidad de cada pack mientras haces scroll.</p>
+    </div>
+
+    <div class="packs-table fade-in">
+      <div class="pack-row header-row">
+        <div class="pack-label">Modelo</div>
+        <div class="pack-cell pack-head">
+          <h3>Sprint IA</h3>
+          <p>Validación rápida con impacto en 30 días.</p>
+        </div>
+        <div class="pack-cell pack-head">
+          <h3>IA as a Service</h3>
+          <p>Evolución continua de agentes y procesos.</p>
+        </div>
+        <div class="pack-cell pack-head">
+          <h3>Transformation IA</h3>
+          <p>Transformación integral para escalar el negocio.</p>
+        </div>
+      </div>
+      <div class="pack-row">
+        <div class="pack-label">Ideal para</div>
+        <div class="pack-cell">Empresas que quieren empezar sin riesgo y ver resultados rápidos.</div>
+        <div class="pack-cell">Equipos que ya usan IA y necesitan mantener ventaja competitiva.</div>
+        <div class="pack-cell">Organizaciones que buscan rediseñar operaciones, ventas y dirección con IA.</div>
+      </div>
+      <div class="pack-row">
+        <div class="pack-label">Incluye</div>
+        <div class="pack-cell"><ul><li>Diagnóstico de oportunidades</li><li>Implementación de 1-2 agentes IA</li><li>KPIs de impacto en 30 días</li></ul></div>
+        <div class="pack-cell"><ul><li>Optimización continua mensual</li><li>Nuevos agentes por prioridad</li><li>Mejora de prompts y formación ejecutiva</li></ul></div>
+        <div class="pack-cell"><ul><li>Roadmap estratégico de IA por áreas</li><li>Automatización end-to-end de procesos críticos</li><li>Acompañamiento a dirección y mandos</li></ul></div>
+      </div>
+      <div class="pack-row">
+        <div class="pack-label">Inversión orientativa</div>
+        <div class="pack-cell"><div class="pack-price">Desde 3.900€</div></div>
+        <div class="pack-cell"><div class="pack-price">Desde 1.500€/mes</div></div>
+        <div class="pack-cell"><div class="pack-price">Proyecto a medida</div></div>
+      </div>
+      <div class="pack-row">
+        <div class="pack-label">Timeline</div>
+        <div class="pack-cell"><div class="pack-time">4 semanas</div></div>
+        <div class="pack-cell"><div class="pack-time">Servicio recurrente</div></div>
+        <div class="pack-cell"><div class="pack-time">8-16 semanas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+
+  <div class="container">
+    <h2>¿Impulsamos la IA en tu negocio en Madrid?</h2>
+    <p>En solo 30 días podrías tener una solución de IA funcionando y con métricas reales.<br><strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.</p>
+    <a href="#contacto" class="btn-cta">Contacta con nosotros →</a>
+  </div>
+</div>
+
+
+
+<!-- ══════════════════════════════════════════
+     SOBRE THE CUINA
+══════════════════════════════════════════ -->
+<section class="sobre" id="sobre-the-cuina">
+  <div class="container">
+    <div class="sobre-grid fade-in">
+      <div class="sobre-text">
+        <div class="section-label">Sobre nosotros</div>
+        <h2 class="section-title">The Cuina AI en Madrid</h2>
+        <p>Somos una consultora especializada en convertir la inteligencia artificial en capacidad operativa real. Con presencia en Madrid, trabajamos desde criterio de negocio: si una solución no mejora productividad, velocidad, margen o capacidad de decisión, no merece la pena implementarla.</p>
+        <p>Queremos impulsar la adopción de la inteligencia artificial en empresas y organizaciones madrileñas como una capacidad estratégica real, capaz de amplificar el potencial de los equipos y redefinir la propuesta de valor para generar un impacto positivo.</p>
+        <a href="/sobre-the-cuina" class="btn-cta" style="margin-top: 32px;">Conoce The Cuina AI →</a>
+
+      </div>
+      <div class="sobre-img">
+        <img src="/assets/images/the_cuina_AI_office-intelligent.jpg" alt="The Cuina AI Team Madrid" width="560" height="315">
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-grid fade-in">
+      <div>
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Preguntas frecuentes sobre consultoría IA en Madrid</h2>
+        <p class="section-sub" style="margin-top:16px;">Descubre las respuestas a tus preguntas sobre la madurez de las soluciones de IA y su preparación.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">¿Qué estoy perdiendo hoy por no integrar IA en mi empresa de Madrid? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">Tiempo, eficiencia y competitividad. En un mercado tan dinámico como Madrid, cada semana sin IA es una semana en la que tu competencia gana velocidad. Los procesos manuales que hoy ocupan horas pueden resolverse en minutos.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿La IA es solo para grandes empresas? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">No. Las PYMEs son las que más se benefician porque el impacto relativo en sus procesos es mayor y los costes de implementación son proporcionales a su tamaño.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Cuánto tiempo se tarda en implementar la IA? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">Nuestro Sprint IA entrega resultados medibles en 30 días. Sin pilotos eternos ni fases de análisis interminables.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Por qué contratar a The Cuina AI como consultora de IA en Madrid? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">Porque trabajamos desde el criterio de negocio, no desde la tecnología. Tenemos presencia en Madrid y cada implementación está vinculada a una métrica clara. Si no genera impacto tangible, no lo implementamos.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Imponéis permanencia? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">No. Trabajamos sin permanencias porque confiamos en que los resultados hablan por sí solos.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Trabajáis de forma presencial en Madrid? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">Sí. Tenemos presencia activa en Madrid y podemos reunirnos contigo para el diagnóstico inicial y los hitos clave del proyecto. También trabajamos con organizaciones de toda España de forma remota.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Qué ROI puedo esperar de un proyecto de IA? <span class="faq-arrow">▾</span></button>
+          <div class="faq-answer">Depende del caso de uso, pero típicamente nuestros clientes en Madrid recuperan la inversión en los primeros 60-90 días gracias a la reducción de tiempo en tareas manuales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="container">
+    <div class="contacto-grid fade-in">
+      <div class="contacto-info">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Solicita una <span style="color:var(--accent)">llamada</span></h2>
+        <p>Si deseas impulsar tu negocio en Madrid con IA, completa el formulario y conecta con nosotros. ¡Te acompañamos a dar el siguiente paso!</p>
+        <ul class="contacto-features">
+          <li>Consultoría de IA 100% personalizada</li>
+          <li>Adaptación a los objetivos del negocio</li>
+          <li>Enfoque estratégico para maximizar el ROI</li>
+        </ul>
+      </div>
+      <form class="form-grid" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label>Organización *</label>
+            <input type="text" name="company" placeholder="Tu empresa" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Cargo *</label>
+            <input type="text" name="role" placeholder="Tu cargo" required>
+          </div>
+          <div class="form-group">
+            <label>Correo *</label>
+            <input type="email" name="email" placeholder="tu@empresa.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tu consulta</label>
+          <textarea name="message" placeholder="Cuéntanos tu caso..."></textarea>
+        </div>
+        <input type="text" name="website" style="display:none">
+        <button type="submit" class="btn-cta" style="width:100%;justify-content:center;padding:14px;">
+          Solicitar llamada
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* ── CAROUSEL ── */
+  (function () {
+    const track   = document.getElementById('carousel-track');
+    const btnPrev = document.getElementById('carousel-prev');
+    const btnNext = document.getElementById('carousel-next');
+    if (!track) return;
+    const cards = Array.from(track.querySelectorAll('.carousel-card'));
+    let current = 0;
+    const visibleCount = () => window.innerWidth < 700 ? 1 : window.innerWidth < 1100 ? 2 : 3;
+    const cardWidth    = () => cards[0].offsetWidth + 24; // 24 = gap
+    function update() {
+      const max = cards.length - visibleCount();
+      current = Math.max(0, Math.min(current, max));
+      track.style.transform = `translateX(-${current * cardWidth()}px)`;
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current >= max;
+    }
+    btnPrev.addEventListener('click', () => { current--; update(); });
+    btnNext.addEventListener('click', () => { current++; update(); });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* ── CONTACTO FORM ── */
+  document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    if (formData.get("website")) return;
+    const payload = {
+      name: formData.get("name"),
+      company: formData.get("company"),
+      role: formData.get("role"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+      page: window.location.href,
+      submittedAt: new Date().toISOString()
+    };
+    try {
+      const response = await fetch("https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (response.ok) {
+        alert("Gracias. Hemos recibido tu solicitud.");
+        this.reset();
+      } else {
+        alert("Ha habido un error. Por favor, inténtalo de nuevo.");
+      }
+    } catch {
+      alert("Ha habido un error de conexión. Por favor, inténtalo de nuevo.");
+    }
+  });
+</script>
+
+</Base>
