@@ -1,6 +1,6 @@
 ---
 title: Implementa IA empezando por No-Regret AI Agents
-date: "2026-10-03"
+date: "2026-03-10"
 category: Estrategia IA
 excerpt: La madurez en IA no se mide por cuántas herramientas tienes, sino por cómo combinas estrategia, talento y tecnología. En este artículo te contamos cómo empezar sin miedo la implementación de la IA en tu organización.
 author: The Cuina AI
