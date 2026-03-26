@@ -1,6 +1,6 @@
 ---
 title: "Cómo Generar Impacto Económico Real con IA Estratégica "
-Date: "2026-03-26"
+date: "2026-03-26"
 category: Estrategia IA
 excerpt: "Descubre cómo la IA estratégica en PYMEs impulsa ingresos, reduce costes y mejora la eficiencia para maximizar tu retorno de inversión."
 author: The Cuina AI
