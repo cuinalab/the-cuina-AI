@@ -1,0 +1,71 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title:            string;
+  excerpt?:         string;
+  metaDescription?: string;
+  image?:           string;
+  imageAlt?:        string;
+  cta?:             string;
+  ctaUrl?:          string;
+  category?:        string;
+  tags?:            string[];
+  date?:            string;
+}
+
+const {
+  title,
+  excerpt         = '',
+  metaDescription = excerpt,
+  image,
+  imageAlt        = '',
+  cta             = 'Solicitar información',
+  ctaUrl          = '/contacto',
+  category        = '',
+  tags            = [],
+  date            = '',
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "description": metaDescription || excerpt,
+};
+---
+
+<Base title={`${title} · The Cuina AI`} description={metaDescription || excerpt} schema={schema}>
+
+  <div class="landing-page">
+
+    <!-- HERO -->
+    <header class="landing-hero">
+      {category && <span class="post-tag">{category}</span>}
+      <h1>{title}</h1>
+      {excerpt && <p class="landing-excerpt">{excerpt}</p>}
+      {cta && <a href={ctaUrl} class="landing-cta">{cta}</a>}
+    </header>
+
+    <!-- IMAGEN -->
+    {image && (
+      <div class="landing-cover">
+        <img src={image} alt={imageAlt} loading="lazy" />
+      </div>
+    )}
+
+    <!-- CONTENIDO MARKDOWN -->
+    <article class="landing-body">
+      <slot />
+    </article>
+
+    <!-- CTA FINAL -->
+    {cta && (
+      <div class="landing-cta-bottom">
+        <a href={ctaUrl} class="landing-cta">{cta}</a>
+      </div>
+    )}
+
+  </div>
+
+</Base>
