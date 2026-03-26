@@ -19,3 +19,27 @@ const blog = defineCollection({
 });
 
 export const collections = { blog };
+
+import { defineCollection, z } from 'astro:content';
+
+// Tu colección blog existente (no tocar)
+const blog = defineCollection({ ... });
+
+// Nueva colección landings
+const landings = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title:           z.string(),
+    date:            z.string(),
+    excerpt:         z.string().optional(),
+    metaDescription: z.string().optional(),
+    image:           z.string().optional(),
+    imageAlt:        z.string().optional(),
+    cta:             z.string().optional(),   // texto del botón CTA
+    ctaUrl:          z.string().optional(),   // enlace del CTA
+    category:        z.string().optional(),
+    tags:            z.array(z.string()).optional(),
+  }),
+});
+
+export const collections = { blog, landings };
