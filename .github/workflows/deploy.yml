@@ -28,3 +28,11 @@ jobs:
           TARGET: /home/u487495715/domains/thecuina.com/public_html/
           REMOTE_PORT: 65002
           SSH_CMD_ARGS: "-o StrictHostKeyChecking=no"
+
+          
+      - name: Test SSH connection
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/test_key
+          chmod 600 /tmp/test_key
+          ssh -i /tmp/test_key -p 65002 -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "echo 'SSH OK'"
+          rm /tmp/test_key
