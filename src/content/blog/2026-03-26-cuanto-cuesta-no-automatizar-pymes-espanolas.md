@@ -1,6 +1,6 @@
 ---
 title: "¿Cuánto cuesta no automatizar tu pyme Impacto económico y estratégico de la IA?"
-pubDate: "2026-03-26"
+Date: "2026-03-26"
 category: Estrategia IA
 excerpt: "Descubre cuánto dinero pierden las pymes españolas sin automatización y cómo la IA mejora productividad y reduce costes ocultos estratégicamente."
 author: The Cuina AI
