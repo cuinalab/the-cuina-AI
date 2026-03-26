@@ -1,0 +1,926 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/consultoria.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.thecuina.com/automatizacion-inteligencia-artificial#service",
+      "name": "Automatización con Inteligencia Artificial para Empresas · The Cuina AI",
+      "url": "https://www.thecuina.com/automatizacion-inteligencia-artificial",
+      "description": "The Cuina AI diseña e implementa automatización con inteligencia artificial para empresas. Automatizamos procesos operativos, flujos comerciales, atención al cliente y reporting conectando IA con sistemas reales de negocio.",
+      "provider": { "@id": "https://www.thecuina.com/#organization" },
+      "areaServed": ["Madrid", "Lleida", "Zaragoza", "Barcelona", "Valencia", "Bilbao", "Sevilla", "España"],
+      "serviceType": [
+        "Automatización con inteligencia artificial para empresas",
+        "Automatización inteligente de procesos",
+        "Automatización empresarial con IA"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.thecuina.com/automatizacion-inteligencia-artificial#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.thecuina.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Automatización con Inteligencia Artificial",
+          "item": "https://www.thecuina.com/automatizacion-inteligencia-artificial"
+        }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://www.thecuina.com/automatizacion-inteligencia-artificial#glossary",
+      "name": "Conceptos clave sobre automatización con inteligencia artificial para empresas",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Automatización con inteligencia artificial",
+          "description": "Uso de sistemas de IA para automatizar procesos empresariales con capacidad de analizar información, tomar decisiones y ejecutar acciones en herramientas reales."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Automatización inteligente",
+          "description": "Automatización empresarial que combina reglas, modelos de IA, contexto y ejecución de tareas en flujos de trabajo operativos."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Proceso automatizado con IA",
+          "description": "Proceso de negocio donde la recopilación de información, el análisis y la acción se realizan parcial o totalmente con inteligencia artificial."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.thecuina.com/automatizacion-inteligencia-artificial#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qué es la automatización con inteligencia artificial",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La automatización con inteligencia artificial es la aplicación de sistemas de IA para ejecutar procesos empresariales de forma automática. A diferencia de una automatización tradicional, puede interpretar contexto, analizar información y decidir acciones dentro de herramientas reales del negocio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qué procesos se pueden automatizar con IA en una empresa",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se pueden automatizar procesos operativos, reporting, clasificación de solicitudes, atención al cliente, seguimiento comercial, generación de documentos, análisis de datos y tareas administrativas que hoy consumen tiempo manual."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qué diferencia hay entre automatización con IA y automatización tradicional",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La automatización tradicional sigue reglas fijas. La automatización con IA puede interpretar lenguaje natural, trabajar con información no estructurada, tomar decisiones y adaptarse mejor a casos variables o ambiguos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuánto cuesta automatizar procesos con inteligencia artificial",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El coste depende del número de procesos, complejidad del flujo, integraciones necesarias y nivel de personalización. Muchas empresas empiezan por un proceso prioritario con impacto claro y amplían después la automatización."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuánto tarda implementar automatización con IA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los primeros procesos automatizados con IA pueden implementarse en pocas semanas cuando el flujo está bien definido y las herramientas están accesibles. Programas más amplios requieren más diseño, más integración y más iteración."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qué beneficios aporta la automatización con IA a pymes",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Permite a las pymes reducir trabajo manual, responder más rápido, operar con más consistencia, aprovechar mejor sus datos y escalar procesos sin aumentar al mismo ritmo la estructura del equipo."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Automatización con Inteligencia Artificial para Empresas · The Cuina AI"
+  description="Automatización con inteligencia artificial para empresas. Diseñamos sistemas que automatizan procesos operativos, ventas, reporting y atención al cliente conectando IA con tus herramientas de negocio."
+  schema={schema}
+>
+  <div class="cia-page aii-page">
+
+    <div style="background:#fff; padding-top: 92px;">
+      <div class="cia-hero fade-in">
+        <div>
+          <p class="eyebrow">Automatización con Inteligencia Artificial para Empresas</p>
+          <h1>Automatiza procesos con IA y gana <em>velocidad</em>, foco y escala</h1>
+          <p>
+            Diseñamos e implementamos automatización con inteligencia artificial para empresas que quieren eliminar trabajo manual,
+            reducir cuellos de botella y conectar datos, decisiones y acciones dentro de procesos reales de negocio.
+          </p>
+          <div class="cia-hero-actions">
+            <a href="#que-es-automatizacion-ia" class="btn-green">Descubrir cómo funciona →</a>
+            <a href="/#contacto" class="btn-outline-dark" style="margin-left:0;">Hablar con un experto →</a>
+          </div>
+        </div>
+
+        <div class="cia-hero-right">
+          <p>Por qué automatizar con IA</p>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">⚡</div>
+            <div>
+              <h4>Menos fricción operativa</h4>
+              <span>Reduce tareas manuales, duplicidades y tiempos muertos en procesos clave.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">🧠</div>
+            <div>
+              <h4>Más que workflows rígidos</h4>
+              <span>La IA interpreta información, clasifica casos y actúa con más contexto.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">🔗</div>
+            <div>
+              <h4>Conectada con tus sistemas</h4>
+              <span>Integramos automatización con CRM, ERP, email, bases de datos y herramientas internas.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">📈</div>
+            <div>
+              <h4>Impacto medible</h4>
+              <span>Automatizamos procesos con métricas claras de tiempo, coste, calidad o conversión.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cia-definicion" id="que-es-automatizacion-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Definición</span>
+          <h2 class="cia-h2">Qué es la automatización con inteligencia artificial</h2>
+        </div>
+        <div>
+          <p class="cia-p">
+            La automatización con inteligencia artificial es el uso de sistemas de IA para ejecutar procesos empresariales de forma
+            automática, combinando recopilación de información, análisis, decisión y acción dentro de herramientas reales de negocio.
+          </p>
+          <p class="cia-p">
+            No se trata solo de enlazar pasos. Se trata de automatizar trabajo que antes requería leer contexto, interpretar lenguaje,
+            clasificar casos, priorizar tareas y decidir qué hacer a continuación.
+          </p>
+          <ul class="cia-list">
+            <li>Lee información desde distintas fuentes y sistemas</li>
+            <li>Interpreta lenguaje natural, documentos y datos no estructurados</li>
+            <li>Toma decisiones según reglas, contexto y objetivo de negocio</li>
+            <li>Ejecuta acciones en CRM, ERP, email, formularios o bases de datos</li>
+            <li>Permite automatizar procesos complejos con mayor flexibilidad</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-problemas aii-snippet" id="definicion-simple-automatizacion-ia">
+      <div class="inner fade-in">
+        <div class="aii-snippet-box">
+          <span class="cia-tag">Definición simple</span>
+          <h2 class="cia-h2">Qué es automatizar un proceso con IA</h2>
+          <p class="aii-snippet-text">
+            Automatizar un proceso con inteligencia artificial significa usar sistemas capaces de leer información, interpretarla,
+            decidir qué hacer y ejecutar acciones automáticamente dentro del flujo de trabajo de una empresa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-definicion aii-glossary" id="glosario-automatizacion-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Glosario rápido</span>
+          <h2 class="cia-h2">Conceptos clave de automatización inteligente</h2>
+        </div>
+        <div class="aii-glossary-list">
+          <div class="aii-glossary-item">
+            <h3>Automatización tradicional</h3>
+            <p class="cia-p">Secuencia rígida basada en reglas fijas y condiciones predefinidas.</p>
+          </div>
+          <div class="aii-glossary-item">
+            <h3>Automatización con IA</h3>
+            <p class="cia-p">Automatización que añade análisis, interpretación y decisión sobre datos y lenguaje natural.</p>
+          </div>
+          <div class="aii-glossary-item">
+            <h3>Proceso end-to-end</h3>
+            <p class="cia-p">Flujo completo desde la entrada de información hasta la acción final sin pasos manuales innecesarios.</p>
+          </div>
+          <div class="aii-glossary-item">
+            <h3>Orquestación</h3>
+            <p class="cia-p">Coordinación entre herramientas, datos, decisiones y acciones dentro de un proceso automatizado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-que-hacemos" id="como-funciona-automatizacion-ia">
+      <div class="inner">
+        <div class="fade-in">
+          <span class="cia-tag">Funcionamiento</span>
+          <h2 class="cia-h2">Cómo funciona la automatización con IA en empresas</h2>
+        </div>
+
+        <div class="cia-steps fade-in">
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 01</span>
+              <h3>Entrada de información</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>
+                El proceso recibe información desde formularios, emails, CRM, ERP, documentos, hojas de cálculo, APIs o bases de datos.
+              </p>
+              <p>
+                El objetivo es capturar el contexto real con el que trabaja la empresa cada día.
+              </p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 02</span>
+              <h3>Interpretación con IA</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>
+                La IA clasifica solicitudes, extrae datos, resume contenido, detecta patrones o interpreta instrucciones escritas en lenguaje natural.
+              </p>
+              <p>
+                Esto permite automatizar tareas que antes requerían juicio humano básico.
+              </p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 03</span>
+              <h3>Decisión y lógica de negocio</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>
+                El sistema decide qué hacer según prioridades, reglas, umbrales, estados del proceso y objetivo empresarial.
+              </p>
+              <p>
+                No solo mueve información: decide el siguiente paso correcto dentro del flujo.
+              </p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 04</span>
+              <h3>Ejecución automática</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>
+                La automatización crea tareas, actualiza registros, envía respuestas, genera documentos, lanza alertas o alimenta cuadros de mando.
+              </p>
+              <p>
+                El resultado es un proceso más rápido, consistente y escalable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-metodo" id="automatizacion-ia-vs-tradicional">
+      <div class="inner fade-in">
+        <span class="cia-tag">Comparativa</span>
+        <h2 class="cia-h2">Automatización con IA vs automatización tradicional</h2>
+
+        <div class="aii-table-wrap">
+          <table class="aii-table">
+            <thead>
+              <tr>
+                <th>Automatización tradicional</th>
+                <th>Automatización con IA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Basada en reglas fijas</td>
+                <td>Combina reglas, IA y contexto</td>
+              </tr>
+              <tr>
+                <td>Funciona mejor en flujos simples</td>
+                <td>Puede operar en procesos más variables</td>
+              </tr>
+              <tr>
+                <td>No interpreta lenguaje natural</td>
+                <td>Lee emails, documentos y texto libre</td>
+              </tr>
+              <tr>
+                <td>Escala mal ante excepciones</td>
+                <td>Gestiona mejor ambigüedad y clasificación</td>
+              </tr>
+              <tr>
+                <td>Automatiza tareas</td>
+                <td>Automatiza decisiones y acciones</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-problemas" id="problemas-que-resuelve-automatizacion-ia">
+      <div class="inner">
+        <div class="cia-problemas-header fade-in">
+          <span class="cia-tag">Problemas que resuelve</span>
+          <h2 class="cia-h2">Qué resuelve la automatización inteligente en una empresa</h2>
+        </div>
+
+        <div class="cia-problemas-grid fade-in">
+          <div class="problema-item">
+            <div class="problema-num">01</div>
+            <h3>Tareas manuales que consumen tiempo</h3>
+            <p>
+              Muchas organizaciones siguen copiando datos, enviando correos, revisando solicitudes o generando informes de forma manual.
+            </p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">02</div>
+            <h3>Procesos lentos y poco consistentes</h3>
+            <p>
+              Cuando cada persona ejecuta el flujo de una forma distinta, aumentan errores, retrasos y dependencia operativa del equipo.
+            </p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">03</div>
+            <h3>Información dispersa en demasiadas herramientas</h3>
+            <p>
+              La automatización con IA conecta sistemas y transforma datos dispersos en acciones coordinadas dentro del proceso.
+            </p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">04</div>
+            <h3>Dificultad para escalar operaciones</h3>
+            <p>
+              Si cada nuevo volumen exige más trabajo humano, el negocio escala peor. Automatizar con IA aumenta capacidad sin crecer linealmente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-impacto" id="procesos-que-se-pueden-automatizar-con-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Casos de uso</span>
+          <h2 class="cia-h2">Qué procesos se pueden automatizar con inteligencia artificial</h2>
+          <p class="cia-p">
+            La automatización con IA tiene sentido cuando existe una secuencia repetible con información que leer, decidir y ejecutar.
+          </p>
+        </div>
+
+        <div class="aii-cases-grid">
+          <article class="aii-case-card">
+            <h3>Automatización de operaciones</h3>
+            <ul class="cia-list">
+              <li>Generación automática de informes</li>
+              <li>Seguimiento de incidencias</li>
+              <li>Control de KPIs y alertas</li>
+              <li>Gestión de tareas repetitivas</li>
+            </ul>
+          </article>
+
+          <article class="aii-case-card">
+            <h3>Automatización de ventas</h3>
+            <ul class="cia-list">
+              <li>Clasificación de leads</li>
+              <li>Seguimiento comercial automático</li>
+              <li>Preparación de propuestas</li>
+              <li>Actualización de CRM</li>
+            </ul>
+          </article>
+
+          <article class="aii-case-card">
+            <h3>Automatización de atención al cliente</h3>
+            <ul class="cia-list">
+              <li>Respuesta a consultas frecuentes</li>
+              <li>Clasificación de tickets</li>
+              <li>Escalado de casos complejos</li>
+              <li>Soporte inicial 24/7</li>
+            </ul>
+          </article>
+
+          <article class="aii-case-card">
+            <h3>Automatización de reporting y datos</h3>
+            <ul class="cia-list">
+              <li>Lectura de fuentes dispersas</li>
+              <li>Consolidación de datos</li>
+              <li>Generación de cuadros de mando</li>
+              <li>Resúmenes ejecutivos automáticos</li>
+            </ul>
+          </article>
+
+          <article class="aii-case-card">
+            <h3>Automatización administrativa</h3>
+            <ul class="cia-list">
+              <li>Procesamiento documental</li>
+              <li>Validación de solicitudes</li>
+              <li>Gestión de formularios</li>
+              <li>Preparación de respuestas y documentos</li>
+            </ul>
+          </article>
+
+          <article class="aii-case-card aii-case-card-cta">
+            <h3>Ver soluciones por área</h3>
+            <p class="cia-p" style="margin-bottom:18px;">
+              Refuerza la relación semántica entre esta landing y tus verticales de marketing, ventas, operaciones, atención al cliente y datos.
+            </p>
+            <a href="/soluciones-inteligencia-artificial" class="btn-green">Explorar soluciones →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-definicion" id="ejemplos-automatizacion-inteligencia-artificial">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Ejemplos</span>
+          <h2 class="cia-h2">Ejemplos de automatización con IA en empresas</h2>
+        </div>
+        <div>
+          <div class="aii-example">
+            <h3>Calificación automática de leads</h3>
+            <p class="cia-p">El sistema analiza formularios, web, CRM y contexto del lead para priorizar oportunidades comerciales automáticamente.</p>
+          </div>
+
+          <div class="aii-example">
+            <h3>Reporting ejecutivo automatizado</h3>
+            <p class="cia-p">La IA consolida varias fuentes, detecta desviaciones y genera un resumen ejecutivo listo para dirección.</p>
+          </div>
+
+          <div class="aii-example">
+            <h3>Clasificación inteligente de solicitudes</h3>
+            <p class="cia-p">Emails, tickets o formularios se leen, etiquetan y encaminan al flujo correcto sin intervención manual inicial.</p>
+          </div>
+
+          <div class="aii-example">
+            <h3>Onboarding automatizado de clientes</h3>
+            <p class="cia-p">La automatización recopila documentación, valida información, crea tareas y activa los siguientes pasos del proceso.</p>
+          </div>
+
+          <div class="aii-example">
+            <h3>Actualización de CRM y seguimiento</h3>
+            <p class="cia-p">Tras una interacción, el sistema resume la conversación, actualiza el CRM y lanza el seguimiento adecuado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-problemas" id="cuando-automatizar-con-ia">
+      <div class="inner fade-in">
+        <div class="cia-problemas-header">
+          <span class="cia-tag">Cuándo tiene sentido</span>
+          <h2 class="cia-h2">Cuándo implementar automatización con IA</h2>
+        </div>
+
+        <div class="aii-check-grid">
+          <div class="aii-check-item">Existe un proceso repetitivo que consume tiempo todas las semanas</div>
+          <div class="aii-check-item">Hay cuellos de botella entre herramientas, equipos o pasos del flujo</div>
+          <div class="aii-check-item">Se trabaja con emails, documentos o texto libre difíciles de automatizar con reglas simples</div>
+          <div class="aii-check-item">El equipo está saturado con tareas operativas de poco valor</div>
+          <div class="aii-check-item">Necesitas más velocidad, consistencia o trazabilidad en el proceso</div>
+          <div class="aii-check-item">Quieres escalar operaciones sin aumentar la estructura al mismo ritmo</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-impacto" id="beneficios-automatizacion-inteligencia-artificial">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Beneficios</span>
+          <h2 class="cia-h2">Beneficios de la automatización con inteligencia artificial</h2>
+          <p class="cia-p">
+            El objetivo no es automatizar por moda, sino rediseñar procesos para operar con más consistencia, menos fricción y mayor capacidad.
+          </p>
+        </div>
+
+        <div>
+          <ul class="cia-list" style="gap:14px;">
+            <li>Reducción de tareas manuales y errores operativos</li>
+            <li>Procesos más rápidos y con menor dependencia de personas concretas</li>
+            <li>Mejor uso de datos y contexto en la ejecución diaria</li>
+            <li>Escalabilidad operativa sin crecer linealmente en equipo</li>
+            <li>Mejor experiencia para clientes y empleados</li>
+            <li>Mayor trazabilidad y consistencia en flujos críticos</li>
+            <li>Capacidad de automatizar procesos más complejos que con reglas simples</li>
+            <li>Más foco del equipo en criterio, relación y trabajo de alto valor</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-definicion aii-strategic" id="por-que-automatizacion-ia-es-clave">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Perspectiva</span>
+          <h2 class="cia-h2">Por qué la automatización con IA es clave en la empresa moderna</h2>
+        </div>
+        <div>
+          <p class="cia-p">
+            La mayoría de empresas ya no compiten solo por tener mejores herramientas, sino por operar mejor. La automatización con IA crea una nueva capa operativa: procesos que leen, entienden y actúan con menos intervención manual.
+          </p>
+          <p class="cia-p">
+            Eso permite responder más rápido, ejecutar con más consistencia y convertir información dispersa en acciones reales. En términos de negocio, significa más productividad, más velocidad y una organización más preparada para escalar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-problemas aii-trends" id="tendencias-automatizacion-ia">
+      <div class="inner fade-in">
+        <div class="cia-problemas-header">
+          <span class="cia-tag">Tendencias</span>
+          <h2 class="cia-h2">Hacia dónde va la automatización inteligente</h2>
+        </div>
+        <div class="aii-trends-grid">
+          <article class="problema-item">
+            <div class="problema-num">01</div>
+            <h3>Automatización más contextual</h3>
+            <p>Los flujos ya no solo siguen reglas: entienden lenguaje natural, documentos y contexto operativo.</p>
+          </article>
+          <article class="problema-item">
+            <div class="problema-num">02</div>
+            <h3>Más procesos end-to-end</h3>
+            <p>Las empresas buscan automatizar flujos completos, no tareas aisladas, para capturar más impacto real.</p>
+          </article>
+          <article class="problema-item">
+            <div class="problema-num">03</div>
+            <h3>Convergencia con agentes de IA</h3>
+            <p>La automatización inteligente y los agentes convergen cuando el sistema puede decidir y actuar dentro del proceso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-geo" id="sobre-the-cuina-automatizacion-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Sobre The Cuina AI</span>
+          <h2>Especialistas en automatización con inteligencia artificial para empresas</h2>
+          <p>
+            The Cuina AI es una consultora especializada en automatización con inteligencia artificial para empresas.
+          </p>
+          <p>
+            Ayudamos a organizaciones a rediseñar procesos, conectar herramientas, automatizar flujos críticos e integrar IA en operaciones, ventas, atención al cliente y reporting.
+          </p>
+        </div>
+
+        <div>
+          <p class="cia-p">Trabajamos con empresas en toda España, con presencia directa en:</p>
+          <div class="geo-pills">
+            <span class="geo-pill">Madrid</span>
+            <span class="geo-pill">Lleida</span>
+            <span class="geo-pill">Zaragoza</span>
+            <span class="geo-pill">Barcelona</span>
+            <span class="geo-pill">Valencia</span>
+            <span class="geo-pill">Bilbao</span>
+            <span class="geo-pill">Sevilla</span>
+            <span class="geo-pill">España</span>
+          </div>
+
+          <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;">
+            <a href="/agentes-ia-empresas" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">Agentes IA →</a>
+            <a href="/soluciones-inteligencia-artificial/ia-operaciones-empresas" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA en operaciones →</a>
+            <a href="/soluciones-inteligencia-artificial/ia-analisis-datos" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA análisis de datos →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-faq" id="faq">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">FAQ</span>
+          <h2 class="cia-h2">Preguntas frecuentes sobre automatización con inteligencia artificial</h2>
+        </div>
+
+        <div class="cia-faq-list">
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué es la automatización con inteligencia artificial
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              La automatización con inteligencia artificial es la aplicación de sistemas de IA para ejecutar procesos empresariales de forma automática. A diferencia de una automatización tradicional, puede interpretar contexto, analizar información y decidir acciones dentro de herramientas reales del negocio.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué procesos se pueden automatizar con IA en una empresa
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Se pueden automatizar procesos operativos, reporting, clasificación de solicitudes, atención al cliente, seguimiento comercial, generación de documentos, análisis de datos y tareas administrativas que hoy consumen tiempo manual.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué diferencia hay entre automatización con IA y automatización tradicional
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              La automatización tradicional sigue reglas fijas. La automatización con IA puede interpretar lenguaje natural, trabajar con información no estructurada, tomar decisiones y adaptarse mejor a casos variables o ambiguos.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Cuánto cuesta automatizar procesos con inteligencia artificial
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              El coste depende del número de procesos, complejidad del flujo, integraciones necesarias y nivel de personalización. Muchas empresas empiezan por un proceso prioritario con impacto claro y amplían después la automatización.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Cuánto tarda implementar automatización con IA
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Los primeros procesos automatizados con IA pueden implementarse en pocas semanas cuando el flujo está bien definido y las herramientas están accesibles. Programas más amplios requieren más diseño, más integración y más iteración.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué beneficios aporta la automatización con IA a pymes
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Permite a las pymes reducir trabajo manual, responder más rápido, operar con más consistencia, aprovechar mejor sus datos y escalar procesos sin aumentar al mismo ritmo la estructura del equipo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cia-cta">
+      <p class="eyebrow">Siguiente paso</p>
+      <h2>Automatiza procesos con inteligencia artificial en tu empresa</h2>
+      <p>
+        Te ayudamos a detectar procesos con potencial, diseñar una automatización útil y desplegar sistemas conectados con tus herramientas para generar impacto real.
+      </p>
+      <div>
+        <a href="/#contacto" class="btn-light">Hablar con un experto en IA →</a>
+        <a href="/soluciones-inteligencia-artificial" class="btn-outline-light">Ver soluciones →</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cia-faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.cia-faq-item').forEach((el) => el.classList.remove('open'));
+
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
+
+  <style>
+    .aii-page .cia-p {
+      max-width: none;
+    }
+
+    .aii-snippet {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    .aii-snippet-box {
+      background: #f7f9f8;
+      border: 1px solid #e8eceb;
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .aii-snippet-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #1b1b1b;
+      max-width: 920px;
+    }
+
+    .aii-glossary {
+      background: #fff;
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+
+    .aii-glossary-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .aii-glossary-item {
+      border: 1px solid #e8eceb;
+      border-radius: 18px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .aii-glossary-item h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: #0d0d0d;
+      letter-spacing: -0.01em;
+    }
+
+    .aii-table-wrap {
+      margin-top: 40px;
+      overflow-x: auto;
+      border: 1px solid #e7ecef;
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    .aii-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .aii-table th,
+    .aii-table td {
+      text-align: left;
+      padding: 22px 24px;
+      border-bottom: 1px solid #edf0f2;
+      vertical-align: top;
+    }
+
+    .aii-table th {
+      background: #f8fbfa;
+      color: #0d0d0d;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    .aii-table td {
+      font-size: 0.96rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .aii-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .aii-case-card {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .aii-case-card h3 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .aii-case-card .cia-list {
+      margin-top: 0;
+    }
+
+    .aii-case-card-cta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(0,200,150,0.08), rgba(0,200,150,0.03));
+    }
+
+    .aii-example {
+      padding: 0 0 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #e8eceb;
+    }
+
+    .aii-example:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .aii-example h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .aii-check-grid,
+    .aii-trends-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .aii-check-item {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 16px;
+      padding: 22px 20px;
+      font-size: 0.96rem;
+      color: #333;
+      line-height: 1.7;
+      font-weight: 500;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .aii-check-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .aii-strategic {
+      background: #f7f9f8;
+      border-top: 1px solid #eef2f1;
+      border-bottom: 1px solid #eef2f1;
+    }
+
+    @media (max-width: 900px) {
+      .aii-cases-grid,
+      .aii-check-grid,
+      .aii-trends-grid,
+      .aii-glossary-list {
+        grid-template-columns: 1fr;
+      }
+
+      .aii-snippet-box {
+        padding: 28px 24px;
+      }
+
+      .aii-snippet-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Base>

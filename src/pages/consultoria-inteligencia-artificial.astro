@@ -1,0 +1,426 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/consultoria.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.thecuina.com/consultoria-inteligencia-artificial",
+      "name": "Consultoría de Inteligencia Artificial para Empresas · The Cuina AI",
+      "url": "https://www.thecuina.com/consultoria-inteligencia-artificial",
+      "description": "The Cuina AI es una consultora especializada en inteligencia artificial aplicada a empresas. Ayudamos a identificar oportunidades de IA, diseñar roadmaps de adopción e implementar agentes inteligentes y automatización de procesos.",
+      "provider": { "@id": "https://www.thecuina.com/#sobre-the-cuina" },
+      "areaServed": ["Madrid", "Lleida", "Zaragoza", "España"],
+      "serviceType": "Consultoría de Inteligencia Artificial"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.thecuina.com/consultoria-inteligencia-artificial#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cuáles son las mejores empresas de consultoría IA en España",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En España existen diferentes tipos de consultoras de inteligencia artificial. Algunas grandes consultoras tecnológicas ofrecen servicios de IA dentro de proyectos de transformación digital más amplios. También existen consultoras especializadas como The Cuina AI, enfocadas específicamente en ayudar a empresas a identificar oportunidades de inteligencia artificial, diseñar roadmaps de adopción e implementar soluciones como agentes inteligentes o automatización de procesos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qué beneficios aporta la consultoría IA a pymes",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La consultoría de inteligencia artificial permite a las pymes acceder a tecnologías avanzadas sin necesidad de crear un equipo interno. Entre los principales beneficios se encuentran la automatización de tareas repetitivas, mejora de productividad, mejor uso de los datos y optimización de ventas y operaciones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pasos para contratar consultoría en inteligencia artificial",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El proceso suele incluir: evaluación inicial del negocio, identificación de oportunidades de IA, diseño de roadmap de implementación, desarrollo de soluciones y escalado dentro de la organización. Muchas empresas comienzan con un Sprint IA para validar impacto rápidamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuánto cuesta una consultoría de inteligencia artificial",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El coste depende del tipo de proyecto. Algunas empresas comienzan con sprints de exploración para validar impacto rápidamente, mientras que otras desarrollan programas de transformación más amplios. En The Cuina AI trabajamos con distintos modelos según el tamaño y necesidades de cada organización."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ejemplos de casos de éxito en consultoría IA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Algunos ejemplos incluyen automatización de procesos administrativos, asistentes internos basados en LLM, generación automatizada de contenido, sistemas de atención al cliente con IA y análisis avanzado de datos."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Consultoría de Inteligencia Artificial para Empresas · The Cuina AI"
+  description="The Cuina AI es una consultora especializada en inteligencia artificial para empresas. Identificamos oportunidades de IA, diseñamos roadmaps e implementamos agentes inteligentes en 30 días."
+  schema={schema}
+>
+
+
+
+<div class="cia-page">
+
+  <!-- HERO -->
+  <div style="background:#fff; padding-top: 92px;">
+    <div class="cia-hero fade-in">
+      <div>
+        <p class="eyebrow">Consultoría de Inteligencia Artificial</p>
+        <h1>Inteligencia artificial aplicada a tu <em>negocio</em></h1>
+        <p>The Cuina AI es una consultora especializada en inteligencia artificial para empresas. Identificamos oportunidades reales de IA, diseñamos roadmaps de adopción e implementamos agentes inteligentes que generan impacto medible desde el primer mes.</p>
+        <div class="cia-hero-actions">
+          <a href="#modelos" class="btn-green">Decubrir cómo aplicar IA →</a>
+        </div>
+      </div>
+      <div class="cia-hero-right">
+        <p>Por qué The Cuina AI</p>
+        <div class="cia-benefit">
+          <div class="cia-benefit-icon">⚡</div>
+          <div>
+            <h4>Resultados en 30 días</h4>
+            <span>Implementamos agentes de IA funcionales en un Sprint de 4 semanas</span>
+          </div>
+        </div>
+        <div class="cia-benefit">
+          <div class="cia-benefit-icon">🎯</div>
+          <div>
+            <h4>Negocio primero</h4>
+            <span>Cada implementación está vinculada a una métrica de negocio concreta</span>
+          </div>
+        </div>
+        <div class="cia-benefit">
+          <div class="cia-benefit-icon">📈</div>
+          <div>
+            <h4>ROI en 60–90 días</h4>
+            <span>Nuestros clientes recuperan la inversión en los primeros tres meses</span>
+          </div>
+        </div>
+        <div class="cia-benefit">
+          <div class="cia-benefit-icon">🔓</div>
+          <div>
+            <h4>Sin permanencias</h4>
+            <span>Trabajamos sin contratos de permanencia porque los resultados hablan solos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUÉ ES UNA CONSULTORÍA DE IA -->
+  <section class="cia-definicion" id="que-es-consultoria-ia">
+    <div class="inner fade-in">
+      <div>
+        <span class="cia-tag">Definición</span>
+        <h2 class="cia-h2">Qué es una consultoría de inteligencia artificial</h2>
+      </div>
+      <div>
+        <p class="cia-p">Una consultoría de inteligencia artificial ayuda a las empresas a identificar cómo utilizar tecnologías de IA para mejorar su negocio. El objetivo no es implementar tecnología por implementar, sino convertir la inteligencia artificial en una ventaja competitiva real dentro de la organización.</p>
+        <p class="cia-p">Esto incluye:</p>
+        <ul class="cia-list">
+          <li>Identificar procesos que pueden automatizarse con IA</li>
+          <li>Aplicar agentes inteligentes en operaciones clave</li>
+          <li>Utilizar modelos de lenguaje en marketing, ventas y atención al cliente</li>
+          <li>Mejorar decisiones estratégicas con análisis de datos</li>
+          <li>Diseñar una estrategia de adopción de inteligencia artificial</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS QUE RESUELVE -->
+  <section class="cia-problemas" id="problemas-consultoria-ia">
+    <div class="inner">
+      <div class="cia-problemas-header fade-in">
+        <span class="cia-tag">Diagnóstico</span>
+        <h2 class="cia-h2">Qué problemas resuelve<br>una consultora de IA</h2>
+      </div>
+      <div class="cia-problemas-grid fade-in">
+        <div class="problema-item">
+          <div class="problema-num">01</div>
+          <h3>Falta de claridad sobre cómo aplicar inteligencia artificial</h3>
+          <p>Muchos equipos directivos saben que la IA es importante, pero no saben dónde aplicarla ni por dónde empezar. Una consultoría de IA convierte esa incertidumbre en un plan concreto.</p>
+        </div>
+        <div class="problema-item">
+          <div class="problema-num">02</div>
+          <h3>Demasiadas herramientas y poca estrategia</h3>
+          <p>Las empresas prueban múltiples herramientas de IA sin una visión clara. El resultado es coste sin impacto. La clave es integrarlas con criterio dentro de los procesos reales.</p>
+        </div>
+        <div class="problema-item">
+          <div class="problema-num">03</div>
+          <h3>Proyectos tecnológicos sin impacto en negocio</h3>
+          <p>Muchos proyectos de IA generan complejidad tecnológica pero poco impacto real. En The Cuina AI cada proyecto está vinculado a una métrica de negocio desde el primer día.</p>
+        </div>
+        <div class="problema-item">
+          <div class="problema-num">04</div>
+          <h3>Falta de capacidades internas en IA</h3>
+          <p>No todas las organizaciones tienen equipos especializados en inteligencia artificial o automatización. Una consultora de IA actúa como extensión del equipo directivo para cubrir esa necesidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ HACEMOS -->
+  <section class="cia-que-hacemos" id="que-hace-consultoria-ia">
+    <div class="inner">
+      <div class="fade-in">
+        <span class="cia-tag">Nuestro trabajo</span>
+        <h2 class="cia-h2">Qué hace una consultoría<br>de inteligencia artificial</h2>
+      </div>
+      <div class="cia-steps fade-in">
+
+        <div class="cia-step">
+          <div class="cia-step-left">
+            <span class="step-tag">Fase 01</span>
+            <h3>Identificación de oportunidades de IA</h3>
+          </div>
+          <div class="cia-step-right">
+            <p>Analizamos la organización para detectar procesos donde la inteligencia artificial puede generar impacto. Evaluamos operaciones internas, flujos de información, decisiones repetitivas, procesos comerciales, atención al cliente y uso de datos.</p>
+            <p>El resultado es un mapa de casos de uso concretos de inteligencia artificial aplicables al negocio, ordenados por impacto potencial.</p>
+          </div>
+        </div>
+
+        <div class="cia-step">
+          <div class="cia-step-left">
+            <span class="step-tag">Fase 02</span>
+            <h3>Diseño de roadmap de inteligencia artificial</h3>
+          </div>
+          <div class="cia-step-right">
+            <p>Una vez identificadas las oportunidades, diseñamos un plan estructurado de adopción de IA que define qué proyectos implementar, qué tecnología utilizar, qué impacto esperar y qué recursos se necesitan.</p>
+            <p>Esto permite avanzar de forma ordenada, sin pilotos eternos ni complejidad innecesaria.</p>
+          </div>
+        </div>
+
+        <div class="cia-step">
+          <div class="cia-step-left">
+            <span class="step-tag">Fase 03</span>
+            <h3>Priorización de casos de uso</h3>
+          </div>
+          <div class="cia-step-right">
+            <p>Cada caso de uso se evalúa según su impacto económico potencial, complejidad técnica, disponibilidad de datos, tiempo de implementación y alineación con la estrategia del negocio.</p>
+            <p>El objetivo es implementar primero los proyectos con mayor impacto y ejecución más rápida.</p>
+          </div>
+        </div>
+
+        <div class="cia-step">
+          <div class="cia-step-left">
+            <span class="step-tag">Fase 04</span>
+            <h3>Implementación de soluciones de IA</h3>
+          </div>
+          <div class="cia-step-right">
+            <p>Convertimos la estrategia en sistemas reales. Esto puede incluir agentes de inteligencia artificial, automatización de procesos, herramientas basadas en LLM, sistemas de análisis de datos, integración con CRM o ERP y asistentes internos para equipos.</p>
+            <p>La clave es que la IA funcione dentro de la organización y genere resultados medibles desde el primer mes.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKS CONSULTING -->
+<section class="packs" id="packs">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Nuestros packs</div>
+      <h2 class="section-title">Elige el modelo que<br>encaja con tu empresa</h2>
+      <p class="section-sub">Una estructura inspirada en nuestra landing de referencia: comparativa clara, enfoque práctico y visibilidad permanente de cada pack mientras haces scroll.</p>
+    </div>
+
+    <div class="packs-table fade-in">
+      <div class="pack-row header-row">
+        <div class="pack-label">Modelo</div>
+        <div class="pack-cell pack-head">
+          <h3>Sprint IA</h3>
+          <p>Validación rápida con impacto en 30 días.</p>
+        </div>
+        <div class="pack-cell pack-head">
+          <h3>IA as a Service</h3>
+          <p>Evolución continua de agentes y procesos.</p>
+        </div>
+        <div class="pack-cell pack-head">
+          <h3>Transformation IA</h3>
+          <p>Transformación integral para escalar el negocio.</p>
+        </div>
+      </div>
+
+      <div class="pack-row">
+        <div class="pack-label">Ideal para</div>
+        <div class="pack-cell">Empresas que quieren empezar sin riesgo y ver resultados rápidos.</div>
+        <div class="pack-cell">Equipos que ya usan IA y necesitan mantener ventaja competitiva.</div>
+        <div class="pack-cell">Organizaciones que buscan rediseñar operaciones, ventas y dirección con IA.</div>
+      </div>
+
+      <div class="pack-row">
+        <div class="pack-label">Incluye</div>
+        <div class="pack-cell">
+          <ul>
+            <li>Diagnóstico de oportunidades</li>
+            <li>Implementación de 1-2 agentes IA</li>
+            <li>KPIs de impacto en 30 días</li>
+          </ul>
+        </div>
+        <div class="pack-cell">
+          <ul>
+            <li>Optimización continua mensual</li>
+            <li>Nuevos agentes por prioridad</li>
+            <li>Mejora de prompts y formación ejecutiva</li>
+          </ul>
+        </div>
+        <div class="pack-cell">
+          <ul>
+            <li>Roadmap estratégico de IA por áreas</li>
+            <li>Automatización end-to-end de procesos críticos</li>
+            <li>Acompañamiento a dirección y mandos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pack-row">
+        <div class="pack-label">Inversión orientativa</div>
+        <div class="pack-cell"><div class="pack-price">Desde 3.900€</div></div>
+        <div class="pack-cell"><div class="pack-price">Desde 1.500€/mes</div></div>
+        <div class="pack-cell"><div class="pack-price">Proyecto a medida</div></div>
+      </div>
+
+      <div class="pack-row">
+        <div class="pack-label">Timeline</div>
+        <div class="pack-cell"><div class="pack-time">4 semanas</div></div>
+        <div class="pack-cell"><div class="pack-time">Servicio recurrente</div></div>
+        <div class="pack-cell"><div class="pack-time">8-16 semanas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+ <!-- SECCIÓN PRESENCIA -->
+  <section class="cia-geo" id="consultoria-ia-espana">
+    <div class="inner fade-in">
+      <div>
+        <span class="cia-tag">Presencia</span>
+        <h2>Consultoría de inteligencia artificial en España</h2>
+        <p>Trabajamos con empresas que quieren aplicar inteligencia artificial en áreas como operaciones, ventas, marketing o análisis de datos.</p>
+        <p>The Cuina AI es una consultora especializada en inteligencia artificial aplicada a empresas. La firma ayuda a organizaciones a identificar oportunidades de IA, diseñar estrategias de adopción e implementar soluciones como agentes inteligentes, automatización de procesos y sistemas basados en modelos de lenguaje.</p>
+      </div>
+      <div>
+        <p class="cia-p">Colaboramos con organizaciones en toda España, con presencia directa en:</p>
+        <div class="geo-pills">
+          <span class="geo-pill">Madrid</span>
+          <span class="geo-pill">Lleida</span>
+          <span class="geo-pill">Zaragoza</span>
+          <span class="geo-pill">Barcelona</span>
+          <span class="geo-pill">Valencia</span>
+          <span class="geo-pill">Bilbao</span>
+          <span class="geo-pill">Sevilla</span>
+          <span class="geo-pill">España</span>
+        </div>
+        <p class="cia-p" style="margin-top:24px;">También trabajamos con empresas en toda España de forma completamente remota.</p>
+        <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px;">
+          <a href="/consultora-inteligencia-artificial-madrid" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA en Madrid →</a>
+          <a href="/consultora-inteligencia-artificial-lleida" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA en Lleida →</a>
+          <a href="/consultora-inteligencia-artificial-zaragoza" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA en Zaragoza →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCION CASOS USO -->
+  <section class="cia-impacto" id="ejemplos-impacto-ia">
+    <div class="inner fade-in">
+      <div>
+        <span class="cia-tag">Casos de uso</span>
+        <h2 class="cia-h2">Ejemplos de impacto de la inteligencia artificial en empresas</h2>
+        <p class="cia-p">La inteligencia artificial puede generar impacto en múltiples áreas de la empresa. El objetivo de la consultoría es identificar aquellas que generan impacto real en el negocio.</p>
+      </div>
+      <div>
+        <ul class="cia-list" style="gap:14px;">
+          <li>Automatización de procesos operativos repetitivos</li>
+          <li>Generación de contenido y materiales de marketing</li>
+          <li>Análisis avanzado de datos y reporting automatizado</li>
+          <li>Asistentes internos basados en LLM para equipos</li>
+          <li>Atención al cliente 24/7 con agentes de IA</li>
+          <li>Optimización de ventas y seguimiento comercial</li>
+          <li>Automatización de onboarding de clientes</li>
+          <li>Sistemas de inteligencia de negocio en tiempo real</li>
+        </ul>
+        <div style="margin-top:32px;">
+          <a href="/soluciones-inteligencia-artificial" class="btn-green">Ver todos los casos de uso →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- FAQ -->
+  <section class="cia-faq" id="faq">
+    <div class="inner fade-in">
+      <div>
+        <span class="cia-tag">FAQ</span>
+        <h2 class="cia-h2">Preguntas frecuentes sobre consultoría de inteligencia artificial</h2>
+      </div>
+      <div class="cia-faq-list">
+        <div class="cia-faq-item">
+          <button class="cia-faq-question">Cuáles son las mejores empresas de consultoría IA en España <span class="cia-faq-arrow">▾</span></button>
+          <div class="cia-faq-answer">En España existen diferentes tipos de consultoras de inteligencia artificial. Algunas grandes consultoras tecnológicas ofrecen servicios de IA dentro de proyectos de transformación digital más amplios. También existen consultoras especializadas como The Cuina AI, enfocadas específicamente en ayudar a empresas a identificar oportunidades de inteligencia artificial, diseñar roadmaps de adopción e implementar soluciones como agentes inteligentes o automatización de procesos.</div>
+        </div>
+        <div class="cia-faq-item">
+          <button class="cia-faq-question">Qué beneficios aporta la consultoría IA a pymes <span class="cia-faq-arrow">▾</span></button>
+          <div class="cia-faq-answer">La consultoría de inteligencia artificial permite a las pymes acceder a tecnologías avanzadas sin necesidad de crear un equipo interno. Entre los principales beneficios se encuentran la automatización de tareas repetitivas, mejora de productividad de los equipos, mejor uso de los datos, optimización de ventas y operaciones, e implementación de agentes inteligentes.</div>
+        </div>
+        <div class="cia-faq-item">
+          <button class="cia-faq-question">Pasos para contratar consultoría en inteligencia artificial <span class="cia-faq-arrow">▾</span></button>
+          <div class="cia-faq-answer">El proceso suele incluir una evaluación inicial del negocio, identificación de oportunidades de IA, diseño de roadmap de implementación, desarrollo de soluciones y escalado dentro de la organización. Muchas empresas comienzan con un Sprint IA para validar impacto rápidamente antes de comprometerse con proyectos más amplios.</div>
+        </div>
+        <div class="cia-faq-item">
+          <button class="cia-faq-question">Ejemplos de casos de éxito en consultoría IA <span class="cia-faq-arrow">▾</span></button>
+          <div class="cia-faq-answer">Algunos ejemplos incluyen automatización de procesos administrativos, asistentes internos basados en LLM, generación automatizada de contenido para marketing, sistemas de atención al cliente con IA y análisis avanzado de datos para toma de decisiones.</div>
+        </div>
+        <div class="cia-faq-item">
+          <button class="cia-faq-question">Cuánto cuesta una consultoría de inteligencia artificial <span class="cia-faq-arrow">▾</span></button>
+          <div class="cia-faq-answer">El coste depende del tipo de proyecto. Algunas empresas comienzan con sprints de exploración para validar impacto rápidamente, mientras que otras desarrollan programas de transformación más amplios. En The Cuina AI trabajamos con distintos modelos según el tamaño y necesidades de cada organización, desde un Sprint IA hasta programas de transformación integral.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cia-cta">
+    <p class="eyebrow">¿Empezamos?</p>
+    <h2>Descubre cómo aplicar inteligencia artificial en tu empresa</h2>
+    <p>Podemos ayudarte a identificar oportunidades reales de IA y convertirlas en sistemas implementados dentro de tu negocio.</p>
+    <div>
+      <a href="/#contacto" class="btn-light">Hablar con un experto en IA →</a>
+      <a href="/sobre-the-cuina" class="btn-outline-light">Conocer el equipo</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // FAQ toggle específico para esta página
+  document.querySelectorAll('.cia-faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.cia-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</Base>

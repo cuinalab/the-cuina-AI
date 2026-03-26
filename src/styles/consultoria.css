@@ -1,0 +1,700 @@
+
+  .cia-page {
+    background: #fff;
+    color: #111;
+  }
+
+  /* ── HERO ── */
+  .cia-hero {
+    background: #fff;
+    padding: 160px 24px 100px;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cia-hero .eyebrow {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .cia-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #0d0d0d;
+    margin-bottom: 24px;
+  }
+
+  .cia-hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .cia-hero p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    font-weight: 400;
+    max-width: 480px;
+  }
+
+  .cia-hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .cia-hero-right {
+    background: #f7f9f8;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cia-hero-right p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .cia-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8eceb;
+  }
+
+  .cia-benefit:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .cia-benefit-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(0,200,150,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .cia-benefit h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0d0d0d;
+    margin-bottom: 4px;
+  }
+
+  .cia-benefit span {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 400;
+  }
+
+  /* ── SECCIÓN DEFINICIÓN ── */
+  .cia-definicion {
+    background: #f7f9f8;
+    padding: 100px 0;
+  }
+
+  .cia-definicion .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .cia-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .cia-h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    color: #0d0d0d;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cia-p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .cia-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .cia-list li {
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: 400;
+  }
+
+  .cia-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── PROBLEMAS ── */
+  .cia-problemas {
+    background: #fff;
+    padding: 100px 0;
+  }
+
+  .cia-problemas .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cia-problemas-header {
+    margin-bottom: 56px;
+  }
+
+  .cia-problemas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: #e8eceb;
+  }
+
+  .problema-item {
+    background: #fff;
+    padding: 48px;
+  }
+
+  .problema-item h3 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #0d0d0d;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .problema-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  .problema-num {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  /* ── QUÉ HACEMOS ── */
+  .cia-que-hacemos {
+    background: #f7f9f8;
+    padding: 100px 0;
+  }
+
+  .cia-que-hacemos .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cia-steps {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cia-step {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 48px 0;
+    border-bottom: 1px solid #e0e5e3;
+    align-items: start;
+  }
+
+  .cia-step:last-child {
+    border-bottom: none;
+  }
+
+  .cia-step-left h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #0d0d0d;
+    margin-bottom: 8px;
+  }
+
+  .cia-step-left .step-tag {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .cia-step-right p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  /* ── MODELOS ── */
+  .cia-modelos {
+    background: #0d0d0d;
+    padding: 100px 0;
+    color: #f0f0f0;
+  }
+
+  .cia-modelos .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cia-modelos .cia-tag { color: var(--accent); }
+
+  .cia-modelos .cia-h2 { color: #fff; margin-bottom: 56px; }
+
+  .modelos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: #222;
+  }
+
+  .modelo-card {
+    background: #0d0d0d;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modelo-card h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .modelo-sub {
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .modelo-card p {
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.75;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .modelo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .modelo-list li {
+    font-size: 0.9rem;
+    color: #aaa;
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+  }
+
+  .modelo-list li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .btn-modelo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,200,150,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+    margin-top: auto;
+  }
+
+  .btn-modelo:hover { border-color: var(--accent); }
+
+  /* ── METODOLOGÍA ── */
+  .cia-metodo {
+    background: #fff;
+    padding: 100px 0;
+  }
+
+  .cia-metodo .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .metodo-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: #e8eceb;
+    margin-top: 56px;
+  }
+
+  .metodo-simple-item {
+    background: #fff;
+    padding: 40px 32px;
+  }
+
+  .metodo-simple-item .num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .metodo-simple-item h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #0d0d0d;
+    margin-bottom: 10px;
+  }
+
+  .metodo-simple-item p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ── IMPACTO ── */
+  .cia-impacto {
+    background: #f7f9f8;
+    padding: 100px 0;
+  }
+
+  .cia-impacto .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ── GEO BLOCK ── */
+  .cia-geo {
+    background: #fff;
+    padding: 80px 0;
+    border-top: 1px solid #e8eceb;
+    border-bottom: 1px solid #e8eceb;
+  }
+
+  .cia-geo .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cia-geo h2 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #0d0d0d;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .cia-geo p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .geo-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .geo-pill {
+    background: rgba(0,200,150,0.08);
+    border: 1px solid rgba(0,200,150,0.2);
+    color: #0d6b52;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  /* ── FAQ ── */
+  .cia-faq {
+    background: #fff;
+    padding: 100px 0;
+  }
+
+  .cia-faq .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+  }
+
+  .cia-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cia-faq-item {
+    border-bottom: 1px solid #e7ecef;
+    overflow: hidden;
+  }
+
+  .cia-faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: #131313;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s;
+  }
+
+  .cia-faq-question:hover { color: var(--accent); }
+
+  .cia-faq-arrow {
+    color: #999;
+    transition: transform 0.25s, color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .cia-faq-item.open .cia-faq-arrow {
+    transform: rotate(180deg);
+    color: var(--accent);
+  }
+
+  .cia-faq-answer {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s;
+    font-weight: 400;
+  }
+
+  .cia-faq-item.open .cia-faq-answer {
+    max-height: 300px;
+    padding-bottom: 20px;
+  }
+
+  /* ── CTA FINAL ── */
+  .cia-cta {
+    background: #0d0d0d;
+    padding: 120px 24px;
+    text-align: center;
+  }
+
+  .cia-cta .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .cia-cta h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.1;
+  }
+
+  .cia-cta p {
+    font-size: 1.05rem;
+    color: #888;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  /* BUTTONS LIGHT */
+  .btn-light {
+    background: #fff;
+    color: #0d0d0d;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-light:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: 1.5px solid #333;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-left: 12px;
+  }
+
+  .btn-outline-light:hover {
+    border-color: #666;
+  }
+
+  .btn-green {
+    background: var(--accent);
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .btn-green:hover {
+    background: var(--accent2);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: #0d0d0d;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-left: 12px;
+  }
+
+  .btn-outline-dark:hover { border-color: #0d0d0d; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .cia-hero { grid-template-columns: 1fr; gap: 48px; padding: 120px 24px 60px; }
+    .cia-definicion .inner { grid-template-columns: 1fr; gap: 40px; }
+    .cia-problemas-grid { grid-template-columns: 1fr; }
+    .cia-step { grid-template-columns: 1fr; gap: 20px; }
+    .modelos-grid { grid-template-columns: 1fr; }
+    .metodo-grid-simple { grid-template-columns: repeat(2, 1fr); }
+    .cia-impacto .inner { grid-template-columns: 1fr; gap: 40px; }
+    .cia-geo .inner { grid-template-columns: 1fr; gap: 40px; }
+    .cia-faq .inner { grid-template-columns: 1fr; gap: 40px; }
+  }

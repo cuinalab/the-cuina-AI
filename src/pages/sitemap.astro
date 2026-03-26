@@ -1,0 +1,224 @@
+---
+// sitemap.astro - Página de sitemap visual · theCuina
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Sitemap · theCuina AI - Consultora de Inteligencia Artificial"
+  description="Mapa completo de todas las páginas de theCuina, consultora estratégica de Inteligencia Artificial en Madrid, Lleida y Zaragoza."
+>
+
+<section class="sitemap-root">
+  <div class="container">
+
+    <div class="sitemap-header">
+      <span class="sitemap-label">Sitemap</span>
+      <h1 class="sitemap-title">Mapa del sitio</h1>
+    </div>
+
+    <div class="sitemap-grid">
+
+      <!-- Columna 1 -->
+      <div class="sitemap-col">
+
+        <div class="sitemap-item">
+          <a href="/" class="sitemap-main-link">Inicio</a>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/consultoria-inteligencia-artificial" class="sitemap-main-link">Consultoría IA</a>
+          <ul class="sitemap-sub">
+            <li><a href="/sprint-ia-empresas">Sprint IA</a></li>
+            <li><a href="/ia-as-a-service">IA as a Service</a></li>
+            <li><a href="/transformacion-inteligencia-artificial-empresas">Transformación IA</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/agentes-ia-empresas" class="sitemap-main-link">Agentes IA</a>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/automatizacion-inteligencia-artificial" class="sitemap-main-link">Automatización IA</a>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/soluciones-inteligencia-artificial" class="sitemap-main-link">Casos de Uso</a>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/sobre-the-cuina" class="sitemap-main-link">Sobre nosotros</a>
+        </div>
+
+        <div class="sitemap-item">
+          <a href="/blog" class="sitemap-main-link">Blog</a>
+        </div>
+
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="sitemap-col">
+
+        <div class="sitemap-item">
+          <span class="sitemap-main-link sitemap-section">Presencia</span>
+          <ul class="sitemap-sub">
+            <li><a href="/consultora-inteligencia-artificial-madrid">Consultora IA Madrid</a></li>
+            <li><a href="/consultora-inteligencia-artificial-lleida">Consultora IA Lleida</a></li>
+            <li><a href="/consultora-inteligencia-artificial-zaragoza">Consultora IA Zaragoza</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-item">
+          <span class="sitemap-main-link sitemap-section">Legal</span>
+          <ul class="sitemap-sub">
+            <li><a href="/aviso-legal">Aviso Legal</a></li>
+            <li><a href="/privacidad">Privacidad</a></li>
+            <li><a href="/cookies">Cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="sitemap-item">
+          <span class="sitemap-main-link sitemap-section">Contacto</span>
+          <ul class="sitemap-sub sitemap-sub--contact">
+            <li><a href="mailto:info@thecuina.com">info@thecuina.com</a></li>
+            <li><a href="tel:+34623789247">(+34) 623 789 247</a></li>
+            <li><a href="https://api.whatsapp.com/send/?phone=34623789247" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</Base>
+
+<style>
+.sitemap-root {
+  background: #fff;
+  color: #131313;
+  min-height: 80vh;
+  padding: 140px 0 100px;
+}
+
+.sitemap-header {
+  margin-bottom: 72px;
+}
+
+.sitemap-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.sitemap-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #131313;
+  margin: 0;
+}
+
+/* Grid principal: 2 columnas */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+  border-top: 1px solid #e5e9ec;
+  padding-top: 56px;
+}
+
+/* Cada item principal */
+.sitemap-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e9ec;
+}
+
+/* Link principal */
+.sitemap-main-link {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #131313;
+  text-decoration: none;
+  line-height: 1;
+  transition: color 0.2s;
+  margin-bottom: 12px;
+}
+
+a.sitemap-main-link:hover {
+  color: var(--accent);
+}
+
+.sitemap-main-link.sitemap-section {
+  color: #aab0b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: default;
+  margin-bottom: 14px;
+}
+
+/* Sublistas */
+.sitemap-sub {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sitemap-sub li a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #59626a;
+  text-decoration: none;
+  padding: 3px 0;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sitemap-sub li a::before {
+  content: '—';
+  font-size: 0.75rem;
+  color: #c8cdd2;
+  flex-shrink: 0;
+}
+
+.sitemap-sub li a:hover {
+  color: #131313;
+}
+
+.sitemap-sub--contact li a::before {
+  content: '→';
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sitemap-root {
+    padding: 120px 0 80px;
+  }
+
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sitemap-title {
+    font-size: 3rem;
+  }
+}
+</style>

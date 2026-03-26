@@ -1,0 +1,1029 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/consultoria.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.thecuina.com/agentes-ia-empresas#service",
+      "name": "Agentes de Inteligencia Artificial para Empresas · The Cuina AI",
+      "url": "https://www.thecuina.com/agentes-ia-empresas",
+      "description": "The Cuina AI diseña e implementa agentes de inteligencia artificial para empresas. Ayudamos a automatizar procesos, optimizar ventas, mejorar operaciones y desplegar sistemas inteligentes conectados con herramientas de negocio.",
+      "provider": { "@id": "https://www.thecuina.com/#organization" },
+      "areaServed": ["Madrid", "Lleida", "Zaragoza", "Barcelona", "Valencia", "Bilbao", "Sevilla", "España"],
+      "serviceType": [
+        "Agentes de inteligencia artificial para empresas",
+        "Implementación de agentes IA",
+        "Automatización inteligente para empresas"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.thecuina.com/agentes-ia-empresas#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.thecuina.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agentes de Inteligencia Artificial para Empresas",
+          "item": "https://www.thecuina.com/agentes-ia-empresas"
+        }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://www.thecuina.com/agentes-ia-empresas#glossary",
+      "name": "Conceptos clave sobre agentes de inteligencia artificial para empresas",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Agente de inteligencia artificial",
+          "description": "Sistema capaz de analizar información, tomar decisiones y ejecutar acciones automáticamente dentro de un proceso empresarial."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agente IA para empresas",
+          "description": "Aplicación empresarial de un agente de inteligencia artificial conectada con datos, herramientas y procesos de negocio."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Automatización inteligente",
+          "description": "Automatización de procesos empresariales combinando IA, contexto y ejecución de acciones en sistemas reales."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.thecuina.com/agentes-ia-empresas#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qué diferencia hay entre agentes de IA y chatbots",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un chatbot responde preguntas mediante conversación. Un agente de inteligencia artificial puede además analizar información, tomar decisiones y ejecutar acciones dentro de sistemas empresariales como CRM, ERP, bases de datos o herramientas internas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qué empresas pueden implementar agentes de IA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cualquier empresa con procesos repetitivos, datos operativos, flujos de trabajo internos o interacción continua con clientes puede beneficiarse de agentes de inteligencia artificial. Son especialmente útiles en ventas, operaciones, atención al cliente, marketing y análisis de datos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuánto cuesta implementar agentes de IA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El coste depende del número de agentes, la complejidad del proceso, las integraciones necesarias y el nivel de autonomía esperado. Muchas empresas empiezan por un caso de uso prioritario y luego escalan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuánto tarda implementar un agente de IA",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los primeros agentes de inteligencia artificial pueden implementarse en pocas semanas cuando el caso de uso está bien definido y los sistemas están accesibles. Proyectos más amplios requieren más tiempo y más integración."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Los agentes de IA sustituyen a los empleados",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En la mayoría de casos no sustituyen al equipo, sino que eliminan trabajo operativo repetitivo y permiten que las personas se enfoquen en criterio, relación, supervisión y tareas de mayor valor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cómo empezar con agentes de inteligencia artificial en una empresa",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mejor forma de empezar es identificar un proceso repetitivo con impacto claro, conectar las fuentes de información necesarias y desplegar un primer agente de IA con una métrica concreta de negocio."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Agentes de Inteligencia Artificial para Empresas · The Cuina AI"
+  description="Diseñamos e implementamos agentes de inteligencia artificial para empresas. Automatiza procesos, optimiza ventas y despliega sistemas inteligentes conectados con tu negocio."
+  schema={schema}
+>
+  <div class="cia-page aie-page-premium">
+
+    <!-- HERO -->
+    <div class="aie-hero-shell">
+      <div class="cia-hero fade-in aie-hero-premium">
+        <div>
+          <p class="eyebrow">Agentes de Inteligencia Artificial para Empresas</p>
+          <h1>Agentes de IA que operan dentro de tu <em>empresa</em></h1>
+          <p>
+            Diseñamos e implementamos agentes de inteligencia artificial para empresas que leen información,
+            toman decisiones y ejecutan tareas reales dentro de tus procesos. No son simples chatbots: son
+            sistemas conectados con el negocio para automatizar operaciones, ventas, atención al cliente y análisis de datos.
+          </p>
+          <div class="cia-hero-actions">
+            <a href="#que-son-agentes-ia" class="btn-green">Descubrir cómo funcionan →</a>
+            <a href="/#contacto" class="btn-outline-dark" style="margin-left:0;">Hablar con un experto →</a>
+          </div>
+        </div>
+
+        <div class="cia-hero-right aie-hero-panel">
+          <p>Por qué los agentes IA importan ahora</p>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">⚙️</div>
+            <div>
+              <h4>Automatización más inteligente</h4>
+              <span>Analizan contexto y actúan dentro de sistemas, no solo siguen reglas fijas.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">🧠</div>
+            <div>
+              <h4>Toman decisiones operativas</h4>
+              <span>Pueden priorizar, clasificar, resumir y ejecutar el siguiente paso del proceso.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">📈</div>
+            <div>
+              <h4>Escalan capacidad del equipo</h4>
+              <span>Reducen trabajo manual y aumentan throughput sin crecer al mismo ritmo en estructura.</span>
+            </div>
+          </div>
+
+          <div class="cia-benefit">
+            <div class="cia-benefit-icon">🔌</div>
+            <div>
+              <h4>Se integran con el negocio</h4>
+              <span>CRM, ERP, bases de datos, documentación, APIs o herramientas internas.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFINICIÓN -->
+    <section class="cia-definicion" id="que-son-agentes-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Definición</span>
+          <h2 class="cia-h2">Qué son los agentes de inteligencia artificial</h2>
+        </div>
+        <div>
+          <p class="cia-p">
+            Los agentes de inteligencia artificial para empresas son sistemas capaces de analizar información,
+            tomar decisiones y ejecutar acciones automáticamente para cumplir un objetivo dentro de un proceso empresarial.
+          </p>
+          <p class="cia-p">
+            A diferencia de un software tradicional o de una automatización rígida, un agente de IA puede operar con contexto,
+            conectarse a distintas fuentes de información y actuar dentro de herramientas reales de negocio.
+          </p>
+          <ul class="cia-list">
+            <li>Leen información desde documentos, datos, emails, formularios o aplicaciones</li>
+            <li>Procesan contexto mediante modelos de IA y lógica empresarial</li>
+            <li>Toman decisiones según reglas, prioridades y objetivos</li>
+            <li>Ejecutan acciones dentro de procesos reales</li>
+            <li>Permiten automatizar trabajo más complejo y menos estructurado</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNIPPET -->
+    <section class="aie-snippet-premium" id="definicion-simple-agente-ia">
+      <div class="inner fade-in">
+        <div class="aie-snippet-premium-box">
+          <span class="cia-tag">Definición simple</span>
+          <h2 class="cia-h2">Qué es un agente de IA</h2>
+          <p class="aie-snippet-premium-text">
+            Un agente de inteligencia artificial es un sistema que puede percibir información, procesarla mediante modelos de IA y ejecutar acciones automáticamente para completar una tarea dentro de una empresa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MICRO GLOSARIO -->
+    <section class="cia-problemas aie-glossary" id="glosario-agentes-ia">
+      <div class="inner fade-in">
+        <div class="cia-problemas-header">
+          <span class="cia-tag">Glosario rápido</span>
+          <h2 class="cia-h2">Conceptos clave para entender agentes de IA</h2>
+        </div>
+
+        <div class="aie-glossary-grid">
+          <article class="aie-glossary-card">
+            <h3>Agente de IA</h3>
+            <p>Sistema que analiza información, decide y actúa automáticamente para cumplir un objetivo.</p>
+          </article>
+          <article class="aie-glossary-card">
+            <h3>AI Agent</h3>
+            <p>Término en inglés para referirse a agentes de inteligencia artificial aplicados a tareas y procesos.</p>
+          </article>
+          <article class="aie-glossary-card">
+            <h3>Automatización inteligente</h3>
+            <p>Automatización que combina IA, contexto, reglas de negocio y ejecución en sistemas reales.</p>
+          </article>
+          <article class="aie-glossary-card">
+            <h3>Agente empresarial</h3>
+            <p>Agente de IA conectado con herramientas de negocio como CRM, ERP, bases de datos o documentación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONAMIENTO -->
+    <section class="cia-que-hacemos" id="como-funcionan-agentes-ia">
+      <div class="inner">
+        <div class="fade-in">
+          <span class="cia-tag">Funcionamiento</span>
+          <h2 class="cia-h2">Cómo funcionan los agentes de IA en empresas</h2>
+        </div>
+
+        <div class="cia-steps fade-in">
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 01</span>
+              <h3>Captura de información</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>El agente recibe datos desde CRM, ERP, bases de datos, documentación, formularios, APIs, correo o herramientas internas.</p>
+              <p>Su valor empieza cuando puede leer el contexto real del negocio, no solo una instrucción aislada.</p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 02</span>
+              <h3>Procesamiento con modelos de IA</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>El sistema interpreta la información mediante modelos de lenguaje, extracción de datos, clasificación y reglas de negocio.</p>
+              <p>Aquí entiende qué significa cada input, qué prioridad tiene y qué acción conviene realizar.</p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 03</span>
+              <h3>Toma de decisiones</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>El agente puede clasificar solicitudes, priorizar leads, detectar incidencias, resumir información o decidir el siguiente paso dentro de un flujo.</p>
+              <p>No solo responde: decide qué hacer según el objetivo definido.</p>
+            </div>
+          </div>
+
+          <div class="cia-step">
+            <div class="cia-step-left">
+              <span class="step-tag">Paso 04</span>
+              <h3>Ejecución de acciones</h3>
+            </div>
+            <div class="cia-step-right">
+              <p>Actualiza sistemas, genera informes, envía mensajes, crea tareas, registra actividad o activa nuevos procesos.</p>
+              <p>El resultado es una automatización inteligente conectada con la operativa diaria de la empresa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section class="cia-metodo" id="agentes-ia-vs-automatizacion">
+      <div class="inner fade-in">
+        <span class="cia-tag">Comparativa</span>
+        <h2 class="cia-h2">Agentes de IA vs automatización tradicional</h2>
+        <p class="cia-p aie-intro-copy">
+          No toda automatización es un agente. Esta diferencia ayuda a Google, a los LLM y al usuario a entender por qué los agentes de IA representan una nueva capa operativa.
+        </p>
+
+        <div class="aie-table-wrap">
+          <table class="aie-table">
+            <thead>
+              <tr>
+                <th>Automatización tradicional</th>
+                <th>Agentes de IA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Basada en reglas fijas</td>
+                <td>Basada en IA y contexto</td>
+              </tr>
+              <tr>
+                <td>Procesos rígidos</td>
+                <td>Procesos adaptativos</td>
+              </tr>
+              <tr>
+                <td>Ejecuta tareas predefinidas</td>
+                <td>Analiza, decide y ejecuta</td>
+              </tr>
+              <tr>
+                <td>Poca flexibilidad ante excepciones</td>
+                <td>Puede gestionar variaciones y ambigüedad</td>
+              </tr>
+              <tr>
+                <td>Escalable solo en tareas simples</td>
+                <td>Escalable en flujos más complejos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMAS -->
+    <section class="cia-problemas" id="problemas-que-resuelven-agentes-ia">
+      <div class="inner">
+        <div class="cia-problemas-header fade-in">
+          <span class="cia-tag">Problemas que resuelven</span>
+          <h2 class="cia-h2">Qué resuelven los agentes de IA en empresas</h2>
+        </div>
+
+        <div class="cia-problemas-grid fade-in">
+          <div class="problema-item">
+            <div class="problema-num">01</div>
+            <h3>Procesos manuales repetitivos</h3>
+            <p>Reporting, seguimiento comercial, clasificación de solicitudes, recopilación de datos o tareas administrativas consumen tiempo sin aportar ventaja competitiva.</p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">02</div>
+            <h3>Equipos saturados de trabajo operativo</h3>
+            <p>Cuando el equipo invierte demasiadas horas en tareas repetitivas, pierde foco estratégico. Los agentes liberan capacidad para trabajo de mayor valor.</p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">03</div>
+            <h3>Decisiones lentas o poco informadas</h3>
+            <p>Si la información está dispersa, decidir cuesta más. Un agente puede leer, resumir, cruzar datos y devolver una recomendación accionable.</p>
+          </div>
+
+          <div class="problema-item">
+            <div class="problema-num">04</div>
+            <h3>Escalabilidad limitada</h3>
+            <p>Si cada nuevo cliente o flujo requiere más personas, el negocio escala peor. Los agentes aumentan capacidad sin crecer linealmente en estructura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPOS -->
+    <section class="cia-impacto" id="tipos-de-agentes-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Tipos de agentes</span>
+          <h2 class="cia-h2">Tipos de agentes de inteligencia artificial en empresas</h2>
+          <p class="cia-p">
+            No todos los agentes tienen la misma función. Esta clasificación mejora la comprensión semántica de la página y facilita que un LLM te cite en respuestas comparativas o educativas.
+          </p>
+        </div>
+
+        <div class="aie-type-grid">
+          <article class="aie-type-card">
+            <h3>Agentes conversacionales</h3>
+            <p class="cia-p">Interactúan con empleados o clientes para responder, guiar, recopilar información o resolver consultas.</p>
+          </article>
+          <article class="aie-type-card">
+            <h3>Agentes analíticos</h3>
+            <p class="cia-p">Leen datos, generan insights, detectan patrones y apoyan la toma de decisiones operativas o directivas.</p>
+          </article>
+          <article class="aie-type-card">
+            <h3>Agentes operativos</h3>
+            <p class="cia-p">Ejecutan acciones dentro de procesos: registrar actividad, crear tareas, actualizar sistemas o lanzar workflows.</p>
+          </article>
+          <article class="aie-type-card">
+            <h3>Agentes comerciales</h3>
+            <p class="cia-p">Preparan contexto de cuentas, priorizan leads, ayudan al seguimiento y mejoran la productividad de ventas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS DE USO -->
+    <section class="cia-definicion aie-cases-section" id="casos-de-uso-agentes-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Casos de uso</span>
+          <h2 class="cia-h2">Dónde aplicar agentes de inteligencia artificial</h2>
+          <p class="cia-p">
+            Los agentes IA para empresas tienen sentido cuando existe información que leer, decisiones que tomar y acciones que ejecutar.
+          </p>
+        </div>
+
+        <div class="aie-cases-grid">
+          <article class="aie-case-card">
+            <h3>Agentes de IA para ventas</h3>
+            <ul class="cia-list">
+              <li>Analizan leads entrantes</li>
+              <li>Preparan contexto comercial</li>
+              <li>Priorizar oportunidades</li>
+              <li>Generan seguimiento automático</li>
+            </ul>
+          </article>
+
+          <article class="aie-case-card">
+            <h3>Agentes de IA para marketing</h3>
+            <ul class="cia-list">
+              <li>Generan contenido</li>
+              <li>Analizan campañas</li>
+              <li>Investigan mercado</li>
+              <li>Crean materiales comerciales</li>
+            </ul>
+          </article>
+
+          <article class="aie-case-card">
+            <h3>Agentes de IA para operaciones</h3>
+            <ul class="cia-list">
+              <li>Reporting automático</li>
+              <li>Control de KPIs</li>
+              <li>Seguimiento de procesos</li>
+              <li>Automatización de tareas internas</li>
+            </ul>
+          </article>
+
+          <article class="aie-case-card">
+            <h3>Agentes de IA para atención al cliente</h3>
+            <ul class="cia-list">
+              <li>Responden consultas</li>
+              <li>Clasifican tickets</li>
+              <li>Escalan casos complejos</li>
+              <li>Soporte 24/7</li>
+            </ul>
+          </article>
+
+          <article class="aie-case-card">
+            <h3>Agentes de IA para análisis de datos</h3>
+            <ul class="cia-list">
+              <li>Analizan bases de datos</li>
+              <li>Generan informes</li>
+              <li>Detectan patrones</li>
+              <li>Responden preguntas de negocio</li>
+            </ul>
+          </article>
+
+          <article class="aie-case-card aie-case-card-cta">
+            <h3>Explora soluciones relacionadas</h3>
+            <p class="cia-p" style="margin-bottom:18px;">
+              Refuerza autoridad temática conectando esta página con verticales de ventas, atención al cliente, automatización y análisis de datos.
+            </p>
+            <a href="/soluciones-inteligencia-artificial" class="btn-green">Ver soluciones →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EJEMPLOS -->
+    <section class="cia-definicion" id="ejemplos-agentes-ia-empresas">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Ejemplos</span>
+          <h2 class="cia-h2">Ejemplos de agentes de IA en empresas</h2>
+        </div>
+        <div>
+          <div class="aie-example">
+            <h3>Agente de generación de contenido</h3>
+            <p class="cia-p">Crea borradores de artículos, emails, publicaciones o materiales comerciales alineados con la guía editorial y el contexto de la marca.</p>
+          </div>
+
+          <div class="aie-example">
+            <h3>Agente de inteligencia comercial</h3>
+            <p class="cia-p">Analiza cuentas objetivo, resume información clave y prepara contexto para el equipo de ventas antes de cada interacción.</p>
+          </div>
+
+          <div class="aie-example">
+            <h3>Agente de reporting automático</h3>
+            <p class="cia-p">Lee distintas fuentes de datos, genera informes periódicos y detecta desviaciones relevantes para responsables de área o dirección.</p>
+          </div>
+
+          <div class="aie-example">
+            <h3>Agente de soporte interno</h3>
+            <p class="cia-p">Responde preguntas sobre procesos, políticas internas, documentación, operaciones o información recurrente del equipo.</p>
+          </div>
+
+          <div class="aie-example">
+            <h3>Agente de atención al cliente</h3>
+            <p class="cia-p">Gestiona preguntas frecuentes, filtra solicitudes y deriva únicamente los casos que requieren intervención humana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUÁNDO TIENE SENTIDO -->
+    <section class="cia-problemas" id="cuando-implementar-agentes-ia">
+      <div class="inner fade-in">
+        <div class="cia-problemas-header">
+          <span class="cia-tag">Cuándo tiene sentido</span>
+          <h2 class="cia-h2">Cuándo implementar agentes de IA en tu empresa</h2>
+        </div>
+
+        <div class="aie-check-grid">
+          <div class="aie-check-item">Tienes procesos repetitivos que consumen tiempo cada semana</div>
+          <div class="aie-check-item">Dispones de datos, documentos o sistemas que hoy no se aprovechan bien</div>
+          <div class="aie-check-item">Tu equipo dedica demasiado esfuerzo a tareas operativas</div>
+          <div class="aie-check-item">Necesitas escalar capacidad sin crecer al mismo ritmo en estructura</div>
+          <div class="aie-check-item">Existen decisiones que podrían apoyarse mejor con datos</div>
+          <div class="aie-check-item">Quieres automatizar procesos con más flexibilidad que un flujo rígido</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="cia-impacto" id="beneficios-agentes-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Beneficios</span>
+          <h2 class="cia-h2">Beneficios de los agentes de inteligencia artificial en empresas</h2>
+          <p class="cia-p">
+            El valor de los agentes de IA no está en la novedad tecnológica, sino en su capacidad para aumentar la eficiencia, acelerar decisiones y desplegar una nueva capa operativa digital.
+          </p>
+        </div>
+
+        <div>
+          <ul class="cia-list aie-benefits-list">
+            <li>Aumento de productividad de los equipos</li>
+            <li>Reducción de tareas manuales y cuellos de botella</li>
+            <li>Decisiones más rápidas con mejor contexto</li>
+            <li>Mayor escalabilidad operativa</li>
+            <li>Mejor experiencia de cliente y tiempos de respuesta</li>
+            <li>Automatización de procesos más complejos</li>
+            <li>Más consistencia en operaciones y reporting</li>
+            <li>Más capacidad sin crecer linealmente en estructura</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ SON CLAVE -->
+    <section class="cia-metodo aie-why-now" id="por-que-son-clave-los-agentes-ia">
+      <div class="inner fade-in">
+        <span class="cia-tag">Contexto</span>
+        <h2 class="cia-h2">Por qué los agentes de IA son clave en la empresa moderna</h2>
+        <div class="aie-why-grid">
+          <div>
+            <p class="cia-p">Las empresas ya no necesitan solo herramientas que ayuden a pensar. Necesitan sistemas que ayuden a ejecutar.</p>
+            <p class="cia-p">Por eso los agentes de inteligencia artificial están ganando relevancia: combinan análisis, decisión y acción dentro de procesos de negocio reales.</p>
+          </div>
+          <div>
+            <ul class="cia-list">
+              <li>Representan una nueva capa operativa digital</li>
+              <li>Permiten automatización más flexible y contextual</li>
+              <li>Aumentan capacidad de equipos sin añadir fricción</li>
+              <li>Conectan IA con métricas reales de negocio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENDENCIAS -->
+    <section class="cia-definicion" id="tendencias-agentes-inteligencia-artificial">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Tendencias</span>
+          <h2 class="cia-h2">Tendencias en agentes de inteligencia artificial</h2>
+        </div>
+        <div>
+          <p class="cia-p">El mercado se está moviendo desde asistentes conversacionales aislados hacia sistemas que ejecutan trabajo real dentro de la empresa.</p>
+          <ul class="cia-list">
+            <li>Más agentes conectados con CRM, ERP y herramientas internas</li>
+            <li>Más uso de modelos de lenguaje como motor de razonamiento operativo</li>
+            <li>Más automatización inteligente frente a flujos rígidos</li>
+            <li>Más copilots y agentes especializados por función de negocio</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORIDAD / GEO -->
+    <section class="cia-geo" id="sobre-the-cuina-agentes-ia">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">Sobre The Cuina AI</span>
+          <h2>Especialistas en implementación de agentes de IA para empresas</h2>
+          <p>
+            The Cuina AI es una consultora especializada en implementación de agentes de inteligencia artificial para empresas.
+          </p>
+          <p>
+            Ayudamos a organizaciones a identificar oportunidades de automatización, diseñar sistemas basados en agentes inteligentes e integrar inteligencia artificial en operaciones, ventas, atención al cliente y análisis de datos.
+          </p>
+        </div>
+
+        <div>
+          <p class="cia-p">Trabajamos con empresas en toda España, con presencia directa en:</p>
+          <div class="geo-pills">
+            <span class="geo-pill">Madrid</span>
+            <span class="geo-pill">Lleida</span>
+            <span class="geo-pill">Zaragoza</span>
+            <span class="geo-pill">Barcelona</span>
+            <span class="geo-pill">Valencia</span>
+            <span class="geo-pill">Bilbao</span>
+            <span class="geo-pill">Sevilla</span>
+            <span class="geo-pill">España</span>
+          </div>
+
+          <div class="aie-links-row">
+            <a href="/automatizacion-inteligencia-artificial" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">Automatización IA →</a>
+            <a href="/soluciones-inteligencia-artificial/ia-ventas-empresas" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA en ventas →</a>
+            <a href="/soluciones-inteligencia-artificial/ia-atencion-cliente" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA atención al cliente →</a>
+            <a href="/soluciones-inteligencia-artificial/ia-analisis-datos" class="btn-outline-dark" style="margin-left:0; font-size:0.85rem; padding:10px 18px;">IA análisis de datos →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="cia-faq" id="faq">
+      <div class="inner fade-in">
+        <div>
+          <span class="cia-tag">FAQ</span>
+          <h2 class="cia-h2">Preguntas frecuentes sobre agentes de inteligencia artificial</h2>
+        </div>
+
+        <div class="cia-faq-list">
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué diferencia hay entre agentes de IA y chatbots
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Un chatbot responde preguntas mediante conversación. Un agente de IA puede además analizar información, tomar decisiones y ejecutar acciones dentro de sistemas empresariales como CRM, ERP, bases de datos o herramientas internas.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Qué empresas pueden implementar agentes de IA
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Cualquier empresa con procesos repetitivos, datos operativos, flujos de trabajo internos o interacción continua con clientes puede beneficiarse de agentes de inteligencia artificial. Son especialmente útiles en ventas, operaciones, atención al cliente, marketing y análisis de datos.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Cuánto cuesta implementar agentes de IA
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              El coste depende del número de agentes, de la complejidad del proceso, de las integraciones necesarias y del nivel de autonomía esperado. Muchas empresas empiezan por un caso de uso prioritario y luego escalan.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Cuánto tarda implementar un agente de IA
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              Los primeros agentes de inteligencia artificial pueden implementarse en pocas semanas cuando el caso de uso está bien definido y los sistemas están accesibles. Proyectos más amplios requieren más tiempo y más integración.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Los agentes de IA sustituyen a los empleados
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              En la mayoría de casos no sustituyen al equipo, sino que eliminan trabajo operativo repetitivo y permiten que las personas se enfoquen en criterio, relación, supervisión y tareas de mayor valor.
+            </div>
+          </div>
+
+          <div class="cia-faq-item">
+            <button class="cia-faq-question">
+              Cómo empezar con agentes de inteligencia artificial en una empresa
+              <span class="cia-faq-arrow">▾</span>
+            </button>
+            <div class="cia-faq-answer">
+              La mejor forma de empezar es identificar un proceso repetitivo con impacto claro, conectar las fuentes de información necesarias y desplegar un primer agente con una métrica concreta de negocio.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cia-cta">
+      <p class="eyebrow">Siguiente paso</p>
+      <h2>Implementa agentes de inteligencia artificial en tu empresa</h2>
+      <p>
+        Te ayudamos a detectar oportunidades, diseñar agentes y desplegar sistemas conectados con tus procesos para generar impacto real.
+      </p>
+      <div>
+        <a href="/#contacto" class="btn-light">Hablar con un experto en IA →</a>
+        <a href="/soluciones-inteligencia-artificial" class="btn-outline-light">Ver soluciones →</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cia-faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.cia-faq-item').forEach((el) => el.classList.remove('open'));
+
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
+
+  <style>
+    .aie-page-premium .cia-p {
+      max-width: none;
+    }
+
+    .aie-hero-shell {
+      background: #fff;
+      padding-top: 92px;
+    }
+
+    .aie-hero-premium {
+      position: relative;
+    }
+
+    .aie-hero-panel {
+      background: linear-gradient(180deg, #f7f9f8 0%, #f2f7f5 100%);
+      border: 1px solid #e7ece9;
+      box-shadow: 0 24px 60px rgba(16, 24, 40, 0.06);
+    }
+
+    .aie-snippet-premium {
+      background: #fff;
+      padding: 72px 0;
+    }
+
+    .aie-snippet-premium .inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .aie-snippet-premium-box {
+      background: linear-gradient(135deg, rgba(0,200,150,0.07), rgba(0,200,150,0.02));
+      border: 1px solid #e8eceb;
+      border-radius: 24px;
+      padding: 42px;
+    }
+
+    .aie-snippet-premium-text {
+      font-size: 1.12rem;
+      line-height: 1.8;
+      color: #141414;
+      max-width: 940px;
+      margin-bottom: 0;
+    }
+
+    .aie-glossary {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .aie-glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .aie-glossary-card {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .aie-glossary-card h3 {
+      font-size: 1.02rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .aie-glossary-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .aie-intro-copy {
+      max-width: 850px;
+      margin-bottom: 26px;
+    }
+
+    .aie-table-wrap {
+      margin-top: 34px;
+      overflow-x: auto;
+      border: 1px solid #e7ecef;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(16, 24, 40, 0.04);
+    }
+
+    .aie-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .aie-table th,
+    .aie-table td {
+      text-align: left;
+      padding: 22px 24px;
+      border-bottom: 1px solid #edf0f2;
+      vertical-align: top;
+    }
+
+    .aie-table th {
+      background: #f8fbfa;
+      color: #0d0d0d;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    .aie-table td {
+      font-size: 0.96rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .aie-type-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .aie-type-card {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .aie-type-card h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .aie-cases-section {
+      background: #f7f9f8;
+    }
+
+    .aie-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .aie-case-card {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.03);
+    }
+
+    .aie-case-card h3 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .aie-case-card .cia-list {
+      margin-top: 0;
+    }
+
+    .aie-case-card-cta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(0,200,150,0.08), rgba(0,200,150,0.03));
+    }
+
+    .aie-example {
+      padding: 0 0 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #e8eceb;
+    }
+
+    .aie-example:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .aie-example h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .aie-check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .aie-check-item {
+      background: #fff;
+      border: 1px solid #e8eceb;
+      border-radius: 16px;
+      padding: 22px 20px;
+      font-size: 0.96rem;
+      color: #333;
+      line-height: 1.7;
+      font-weight: 500;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .aie-check-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .aie-benefits-list {
+      gap: 14px;
+    }
+
+    .aie-why-now {
+      background: #fff;
+    }
+
+    .aie-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    .aie-links-row {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .aie-snippet-premium-box {
+        padding: 28px 24px;
+      }
+
+      .aie-snippet-premium-text {
+        font-size: 1rem;
+      }
+
+      .aie-glossary-grid,
+      .aie-type-grid,
+      .aie-cases-grid,
+      .aie-check-grid,
+      .aie-why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Base>

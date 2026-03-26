@@ -1,0 +1,176 @@
+---
+// src/pages/blog/index.astro
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import '../../styles/blog-index.css';
+
+const allPosts = await getCollection('blog');
+
+const posts = allPosts
+  .map(p => ({
+    slug:     p.id,
+    title:    p.data.title,
+    excerpt:  p.data.excerpt,
+    category: p.data.category,
+    date:     p.data.date,
+    readTime: p.data.readTime,
+    tags:     p.data.tags,
+    image:    p.data.image,
+    imageAlt: p.data.imageAlt,
+    url:      `/blog/${p.id}`,
+  }))
+  .sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const featured = posts[0];
+const rest     = posts.slice(1);
+
+function formatDate(d: string) {
+  const months = ['enero','febrero','marzo','abril','mayo','junio',
+                  'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  try {
+    const [y, m, day] = d.split('-').map(Number);
+    return `${day} de ${months[m - 1]} de ${y}`;
+  } catch { return d; }
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "The Cuina AI · Blog",
+  "url": "https://www.thecuina.com/blog",
+  "description": "Estrategia, casos de uso y reflexiones sobre IA aplicada a PYMEs"
+};
+---
+
+<Base
+  title="Blog · The Cuina AI — Inteligencia artificial aplicada a negocio"
+  description="Estrategia, casos de uso y reflexiones sobre cómo las PYMEs pueden adoptar la IA con impacto real y medible."
+  schema={schema}
+>
+
+
+
+<div class="blog-page">
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <p class="eyebrow">Blog · The Cuina AI</p>
+    <h1>Inteligencia artificial <em>aplicada</em><br>a tu negocio</h1>
+    <p>Estrategia, casos de uso y reflexiones sobre cómo las PYMEs pueden adoptar la IA con impacto real y medible.</p>
+    
+  </section>
+
+  <!-- POSTS -->
+  <section class="section" id="posts">
+    <div class="inner">
+      
+
+      {featured ? (
+        <a class="featured-card fade-in" href={featured.url}>
+          <div class="feat-body">
+            <div>
+              <div class="feat-tag">✦ Artículo destacado</div>
+              <h2>{featured.title}</h2>
+              <p>{featured.excerpt}</p>
+            </div>
+            <div class="feat-foot">
+              <div class="meta-chips">
+                <span class="meta-chip">{featured.category}</span>
+                <span class="meta-chip">{formatDate(featured.date)}</span>
+                <span class="meta-chip">{featured.readTime} min</span>
+              </div>
+              <span class="read-link">Leer artículo →</span>
+            </div>
+          </div>
+          <div class="feat-img">
+            {featured.image
+              ? <img src={featured.image} alt={featured.imageAlt} class="feat-photo" loading="lazy" />
+              : <div class="ico">💡</div>
+            }
+          </div>
+        </a>
+      ) : (
+        <div class="empty-state">
+          <span style="font-size:3rem">📝</span>
+          <p>Pronto llegará el primer artículo. Suscríbete para no perdértelo.</p>
+        </div>
+      )}
+
+      {rest.length > 0 && (
+        <div class="posts-grid">
+          {rest.map((post, i) => (
+            <a class="post-card fade-in" href={post.url}>
+              {post.image &&
+                <img src={post.image} alt={post.imageAlt} class="card-img" loading="lazy" />
+              }
+              <div class="card-top">
+                <span class="tag" style="margin-bottom:0">{post.category}</span>
+                <span class="card-num">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <div class="card-foot">
+                <span class="card-date">{formatDate(post.date)} · {post.readTime} min</span>
+                <span class="card-arrow">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+ 
+  <!-- NEWSLETTER -->
+  <section class="section" id="newsletter">
+    <div class="inner fade-in">
+      <div class="newsletter-box">
+        <div>
+          <span class="tag">Newsletter</span>
+          <h2>IA aplicada a negocio,<br><em>en tu bandeja de entrada</em></h2>
+          <p>Cada semana, estrategias, casos de uso y herramientas de IA para que tu empresa avance. Sin relleno. Solo lo que funciona.</p>
+        </div>
+        <div class="nl-form">
+          <input type="text" id="nl-nombre" placeholder="Tu nombre" />
+          <input type="email" id="nl-email" placeholder="correo@empresa.com" />
+          <button class="btn-cta" type="button" id="nl-btn">Suscribirme →</button>
+          <span class="nl-note" id="nl-msg">Sin spam · Cancela cuando quieras</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+  document.getElementById('nl-btn').addEventListener('click', async function() {
+    const nombre = document.getElementById('nl-nombre').value.trim();
+    const email  = document.getElementById('nl-email').value.trim();
+    const msg    = document.getElementById('nl-msg');
+
+    if (!nombre || !email) {
+      msg.textContent = 'Por favor, rellena todos los campos.';
+      return;
+    }
+
+    this.textContent = 'Enviando...';
+    this.disabled = true;
+
+    try {
+      await fetch('https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, fuente: 'newsletter' })
+      });
+
+      msg.textContent = '✓ ¡Apuntado! Revisa tu bandeja.';
+      document.getElementById('nl-nombre').value = '';
+      document.getElementById('nl-email').value  = '';
+    } catch (e) {
+      msg.textContent = 'Error al enviar. Inténtalo de nuevo.';
+      this.textContent = 'Suscribirme →';
+      this.disabled = false;
+    }
+  });
+</script>
+
+</Base>

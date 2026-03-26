@@ -1,0 +1,222 @@
+[
+  {
+    "nombre": "Agente de Enriquecimiento de Leads",
+    "area": "Ventas y Crecimiento",
+    "tipo": "Enriquecimiento de datos",
+    "automatizacion": "Automatización de prospección",
+    "barrera": "Baja",
+    "problema": "Vendedores perdiendo horas buscando datos de empresas en Google/LinkedIn.",
+    "solucion": "Recupera datos enriquecidos de fuentes externas (como Dun & Bradstreet) en tiempo real para calificar al cliente.",
+    "valor": "Más leads contactados por semana; prospección inteligente sin trabajo manual."
+  },
+  {
+    "nombre": "Agente de Relaciones con Clientes",
+    "area": "Ventas y Crecimiento",
+    "tipo": "Comunicación automatizada",
+    "automatizacion": "Automatización de outreach",
+    "barrera": "Baja",
+    "problema": "Enviar correos comerciales genéricos que nadie responde.",
+    "solucion": "Redacta y envía automáticamente correos electrónicos hiperpersonalizados a clientes verificados.",
+    "valor": "Escala el alcance comercial con menos esfuerzo y acelera el tiempo de respuesta."
+  },
+  {
+    "nombre": "Agente de Actualización CRM",
+    "area": "Ventas y Crecimiento",
+    "tipo": "Sincronización de datos",
+    "automatizacion": "Automatización de CRM",
+    "barrera": "Media",
+    "problema": "Los comerciales odian rellenar el CRM, lo que deja a gerencia a ciegas.",
+    "solucion": "Lee las interacciones y actualiza cuentas, clientes potenciales y contactos directamente en plataformas como Salesforce.",
+    "valor": "CRM siempre actualizado, liberando horas a los comerciales para que vendan."
+  },
+  {
+    "nombre": "Agente Habilitador de Productos",
+    "area": "Ventas y Crecimiento",
+    "tipo": "Soporte comercial",
+    "automatizacion": "Automatización de conocimiento",
+    "barrera": "Baja",
+    "problema": "Comerciales paralizados ante dudas técnicas complejas de clientes durante una venta.",
+    "solucion": "Encuentra los mensajes, diferenciadores y material técnico adecuado en repositorios en cuestión de segundos.",
+    "valor": "Cierre de ventas más rápido y comerciales más seguros ante preguntas difíciles."
+  },
+  {
+    "nombre": "Agente Estratega y Creador Creativo",
+    "area": "Marketing",
+    "tipo": "Generación de contenido",
+    "automatizacion": "Automatización de marketing",
+    "barrera": "Baja",
+    "problema": "Falta de presupuesto para grandes agencias de publicidad.",
+    "solucion": "Analiza datos de audiencia, crea textos publicitarios y genera contenido coherente para campañas.",
+    "valor": "Aumenta el engagement y optimiza los esfuerzos de marketing a bajo costo."
+  },
+  {
+    "nombre": "Agente Personal Shopper",
+    "area": "Atención al Cliente",
+    "tipo": "Asistencia de compra",
+    "automatizacion": "Automatización de conversiones",
+    "barrera": "Media",
+    "problema": "Clientes que abandonan la web por dudas o por no saber combinar productos.",
+    "solucion": "Arma carritos completos resolviendo restricciones de stock, compatibilidad técnica y presupuesto.",
+    "valor": "Aumento directo de conversiones; la compra pasa de ser un listado a una configuración lista para pagar."
+  },
+  {
+    "nombre": "Agente Ejecutor Supervisado",
+    "area": "Atención al Cliente",
+    "tipo": "Automatización de pedidos",
+    "automatizacion": "Automatización de reposición",
+    "barrera": "Alta",
+    "problema": "Clientes B2B o B2C que olvidan reponer sus productos rutinarios.",
+    "solucion": "Compra o hace pedidos automáticamente si el precio baja o el stock falta, pidiendo aprobación solo si hay excepciones.",
+    "valor": "Asegura ventas recurrentes y fideliza al cliente al quitarle carga mental."
+  },
+  {
+    "nombre": "Agente Concierge / Agenda",
+    "area": "Atención al Cliente",
+    "tipo": "Gestión de agenda",
+    "automatizacion": "Automatización de atención 24/7",
+    "barrera": "Baja",
+    "problema": "Perder clientes por no poder atender el teléfono, WhatsApp o emails fuera de horario.",
+    "solucion": "Programa citas, responde dudas frecuentes (ej. en un concesionario o clínica) y envía recordatorios.",
+    "valor": "Aumenta la captación de clientes potenciales 24/7 y elimina cuellos de botella en recepción."
+  },
+  {
+    "nombre": "Agente de Resolución de Disputas",
+    "area": "Atención al Cliente",
+    "tipo": "Gestión de incidencias",
+    "automatizacion": "Automatización de resolución",
+    "barrera": "Media",
+    "problema": "Quejas, devoluciones o problemas de pago estancados por días.",
+    "solucion": "Clasifica disputas, recopila pruebas y automatiza notificaciones para agilizar la resolución.",
+    "valor": "Disputas más rápidas y una drástica mejora en la experiencia del cliente enfadado."
+  },
+  {
+    "nombre": "Agente de Periodificaciones (Accruals)",
+    "area": "Finanzas / Admin.",
+    "tipo": "Contabilidad automatizada",
+    "automatizacion": "Automatización contable",
+    "barrera": "Media",
+    "problema": "Cierres contables de fin de mes lentos y estresantes.",
+    "solucion": "Propone, valida y concilia ajustes de forma continua durante el mes, acercando a la PYME al cierre en tiempo real.",
+    "valor": "Acelera los cierres contables hasta 15 veces."
+  },
+  {
+    "nombre": "Agente Order-to-Cash",
+    "area": "Finanzas / Admin.",
+    "tipo": "Gestión de cobros",
+    "automatizacion": "Automatización de facturación",
+    "barrera": "Alta",
+    "problema": "Facturas sin cobrar y pedidos estancados por falta de stock.",
+    "solucion": "Detecta roturas de inventario, sugiere alternativas, se comunica con clientes y gestiona el cobro.",
+    "valor": "Mejora inmediata de la liquidez (cashflow) y reducción de plazos de entrega."
+  },
+  {
+    "nombre": "Agente de Análisis y Reporting",
+    "area": "Finanzas / Admin.",
+    "tipo": "Análisis financiero",
+    "automatizacion": "Automatización de reporting",
+    "barrera": "Baja",
+    "problema": "Empleados administrativos invirtiendo días en hacer excels para explicar desviaciones presupuestarias.",
+    "solucion": "Usa LLMs para generar explicaciones de resultados, detectar anomalías y crear escenarios al instante.",
+    "valor": "Permite a gerencia tomar decisiones estratégicas diarias en vez de mensuales."
+  },
+  {
+    "nombre": "Agente de Gestión de Deudas",
+    "area": "Finanzas / Admin.",
+    "tipo": "Gestión de cobros",
+    "automatizacion": "Automatización de seguimiento",
+    "barrera": "Media",
+    "problema": "Impagos acumulados y seguimientos caóticos.",
+    "solucion": "Resume llamadas de cobro, clasifica la deuda y analiza el sentimiento del cliente para predecir pagos.",
+    "valor": "Reduce la morosidad y mejora la priorización de cobros."
+  },
+  {
+    "nombre": "Agente de Control de Transacciones",
+    "area": "Finanzas / Admin.",
+    "tipo": "Detección de fraude",
+    "automatizacion": "Monitorización continua",
+    "barrera": "Media",
+    "problema": "Pagos duplicados o intentos de estafa a la PYME.",
+    "solucion": "Analiza datos de transacciones buscando anomalías o comportamientos fraudulentos 24/7.",
+    "valor": "Reduce el riesgo de fraude financiero y mejora la seguridad de tesorería."
+  },
+  {
+    "nombre": "Agente Sourcing (Contratación)",
+    "area": "Compras y Logística",
+    "tipo": "Gestión de proveedores",
+    "automatizacion": "Automatización de compras",
+    "barrera": "Media",
+    "problema": "Falta de tiempo para buscar nuevos proveedores o pedir múltiples presupuestos.",
+    "solucion": "Automatiza peticiones de oferta, precalifica proveedores y analiza propuestas competidoras.",
+    "valor": "Aumenta la eficiencia del equipo entre un 20% y 30%."
+  },
+  {
+    "nombre": "Agente de Negociación de Precios",
+    "area": "Compras y Logística",
+    "tipo": "Negociación automatizada",
+    "automatizacion": "Automatización de negociación",
+    "barrera": "Alta",
+    "problema": "Aceptar la primera oferta de un proveedor por falta de datos o tiempo para negociar.",
+    "solucion": "Sugiere contraofertas en tiempo real, evaluando el equilibrio entre costo y riesgo.",
+    "valor": "Ahorros del 10% al 15% en contratos con proveedores externos."
+  },
+  {
+    "nombre": "Agente de Cumplimiento (Factura/Contrato)",
+    "area": "Compras y Logística",
+    "tipo": "Control de contratos",
+    "automatizacion": "Automatización de revisión",
+    "barrera": "Media",
+    "problema": "Pagar facturas con sobrecostes por no revisar a fondo las condiciones acordadas.",
+    "solucion": "Coteja automáticamente las facturas recibidas y órdenes de compra con las condiciones firmadas en el contrato.",
+    "valor": "Detiene las fugas de valor (pagos indebidos) en un 4%."
+  },
+  {
+    "nombre": "Agente Monitor de Inventario",
+    "area": "Compras y Logística",
+    "tipo": "Control de stock",
+    "automatizacion": "Automatización de inventario",
+    "barrera": "Media",
+    "problema": "Tener demasiado capital inmovilizado en el almacén o quedarse sin stock clave.",
+    "solucion": "Activa alertas y órdenes de compra automáticas basándose en el ritmo de producción y ventas.",
+    "valor": "Evita frenar la producción y optimiza el capital invertido en el almacén."
+  },
+  {
+    "nombre": "Agente de Creación y Revisión Legal",
+    "area": "Legal / Normativa",
+    "tipo": "Revisión de contratos",
+    "automatizacion": "Automatización legal",
+    "barrera": "Media",
+    "problema": "Pagar honorarios altos por revisión de contratos rutinarios (alquileres, confidencialidad, proveedores).",
+    "solucion": "Extrae información clave, localiza cláusulas al instante y redacta borradores base.",
+    "valor": "Reduce el tiempo de revisión de contratos en un 85% y mitiga riesgos."
+  },
+  {
+    "nombre": "Agente de Cumplimiento Normativo",
+    "area": "Legal / Normativa",
+    "tipo": "Compliance",
+    "automatizacion": "Monitorización normativa",
+    "barrera": "Baja",
+    "problema": "El constante cambio de leyes fiscales o de calidad que puede acarrear multas graves a la PYME.",
+    "solucion": "Analiza nueva legislación y alerta sobre el impacto en los productos o impuestos de la empresa.",
+    "valor": "Evita sanciones y facilita una planificación fiscal o de calidad proactiva."
+  },
+  {
+    "nombre": "Agente de Prototipado (Backend)",
+    "area": "Tecnología (IT)",
+    "tipo": "Desarrollo rápido",
+    "automatizacion": "Automatización de desarrollo",
+    "barrera": "Baja",
+    "problema": "Contratar agencias caras para testear ideas o crear portales web internos.",
+    "solucion": "Genera prototipos web o móviles funcionales sin necesidad de saber programar a través de chat.",
+    "valor": "Innovación acelerada y desarrollo digital interno a un costo mínimo."
+  },
+  {
+    "nombre": "Agente Guardián del Conocimiento (Oráculo)",
+    "area": "Gestión del Talento",
+    "tipo": "Gestión del conocimiento",
+    "automatizacion": "Automatización de onboarding",
+    "barrera": "Baja",
+    "problema": "Empleados clave interrumpiendo su trabajo constantemente para formar o resolver dudas a los nuevos.",
+    "solucion": "Documenta procesos y normativas internas, operando como un asistente instantáneo para los empleados.",
+    "valor": "Acelera la integración (onboarding) y protege a la empresa de la pérdida de conocimiento cuando alguien se va."
+  }
+]

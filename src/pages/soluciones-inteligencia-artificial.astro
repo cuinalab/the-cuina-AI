@@ -1,0 +1,279 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/agentes.css';
+import agentsData from '../data/agents.json'; 
+
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.thecuina.com/soluciones-inteligencia-artificial",
+      "url": "https://www.thecuina.com/soluciones-inteligencia-artificial",
+      "name": "Casos de Uso de IA · The Cuina AI",
+      "description": "Explora todos los casos de uso de inteligencia artificial por área de negocio y tipo de agente. Encuentra el que encaja con tu empresa.",
+      "publisher": { "@id": "https://www.thecuina.com/#sobre-the-cuina" }
+    }
+  ]
+};
+
+const areas = [...new Set(agentsData.map(a => a.area).filter(Boolean))].sort();
+const types = [...new Set(agentsData.map(a => a.tipo).filter(Boolean))].sort();
+const automations = [...new Set(agentsData.map(a => a.automatizacion).filter(Boolean))].sort();
+const barriers = [...new Set(agentsData.map(a => a.barrera).filter(Boolean))].sort();
+---
+
+
+
+<Base
+  title="Consultoría de Inteligencia Artificial para Empresas · The Cuina AI"
+  description="The Cuina AI es una consultora especializada en inteligencia artificial para empresas. Identificamos oportunidades de IA, diseñamos roadmaps e implementamos agentes inteligentes en 30 días."
+  schema={schema}
+>
+
+
+
+<div class="casos-page">
+
+  <section class="casos-hero">
+    <p class="eyebrow">Biblioteca de casos de uso</p>
+    <h1>IA con impacto <em>real</em><br>en tu empresa</h1>
+    <p>Explora agentes y automatizaciones de IA organizados por área de negocio. Encuentra los que encajan con tus procesos.</p>
+  </section>
+
+  <section class="casos-table-section">
+    <div class="casos-inner">
+
+      <div class="filters-bar">
+        <div class="filter-search">
+          <label for="search">Buscar</label>
+          <input type="text" id="search" placeholder="Agente, problema, solución..." />
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-area">Área de negocio</label>
+          <select id="filter-area">
+            <option value="">Todas las áreas</option>
+            {areas.map(a => <option value={a}>{a}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-tipo">Tipo de agente</label>
+          <select id="filter-tipo">
+            <option value="">Todos los tipos</option>
+            {types.map(t => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-auto">Automatización</label>
+          <select id="filter-auto">
+            <option value="">Todas</option>
+            {automations.map(a => <option value={a}>{a}</option>)}
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-barrera">Barrera de entrada</label>
+          <select id="filter-barrera">
+            <option value="">Todas</option>
+            {barriers.map(b => <option value={b}>{b}</option>)}
+          </select>
+        </div>
+
+        <button class="btn-reset" id="btn-reset">Limpiar filtros</button>
+      </div>
+
+      <p class="results-meta">
+        Mostrando <strong id="count">{agentsData.length}</strong> casos de uso
+      </p>
+
+      <div class="agents-table-wrap">
+        <table id="agents-table">
+          <thead>
+            <tr>
+              <th>Agente</th>
+              <th>Área</th>
+              <th>Barrera</th>
+              <th>Problema</th>
+              <th>Solución</th>
+              <th>Valor añadido</th>
+            </tr>
+          </thead>
+          <tbody>
+            {agentsData.map(agent => (
+              <tr
+                data-area={agent.area || ''}
+                data-tipo={agent.tipo || ''}
+                data-auto={agent.automatizacion || ''}
+                data-barrera={agent.barrera || ''}
+                data-search={(agent.nombre + ' ' + agent.problema + ' ' + agent.solucion + ' ' + agent.valor).toLowerCase()}
+              >
+                <td>
+                  {agent.nombre}
+                  {agent.tipo && <><br /><span class="tag-pill accent">{agent.tipo}</span></>}
+                </td>
+                <td>{agent.area}</td>
+                <td>
+                  <span class={'tag-pill barrera-' + (agent.barrera || '').toLowerCase()}>
+                    {agent.barrera}
+                  </span>
+                </td>
+                <td>{agent.problema}</td>
+                <td>{agent.solucion}</td>
+                <td>{agent.valor}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <strong>Sin resultados</strong>
+          <p>Prueba con otros filtros o términos de búsqueda.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-clara" id="contacto">
+    <span class="tag">¿Encontraste tu caso de uso?</span>
+    <h2>Implementémoslo<br>en 30 días</h2>
+    <p>Si has identificado un caso de uso que encaja con tu empresa, podemos construirlo, medirlo y escalarlo contigo. Sin permanencias, sin pilotos eternos.</p>
+    <div>
+      <a href="/#contacto" class="btn-cta-dark">Solicita una llamada gratuita →</a>
+      <a href="/consultoria-inteligencia-artificial" class="btn-outline-dark">Ver servicios</a>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <span class="tag">Preguntas frecuentes</span>
+        <h2>Todo lo que necesitas<br>saber antes de empezar</h2>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Puedo implementar cualquiera de estos casos de uso en mi empresa?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, aunque el punto de partida siempre es entender si el caso de uso encaja con tus procesos reales. En una primera llamada gratuita analizamos tu situación y te decimos con honestidad qué tiene sentido implementar y qué no.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto tiempo se tarda en tener resultados?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Con nuestro Sprint IA, los primeros resultados medibles llegan en 30 días. No hacemos pilotos eternos ni fases de análisis que no generan valor. Probamos rápido, medimos y escalamos lo que funciona.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Necesito un equipo técnico interno para implementar estos agentes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. Nos encargamos de toda la implementación técnica. Y más importante: formamos a tu equipo para que entienda y pueda gestionar la solución de forma autónoma. No creamos dependencias tecnológicas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿En qué áreas de negocio tenéis más experiencia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Trabajamos con empresas en ventas, finanzas, atención al cliente, compras, legal y más. La biblioteca se actualiza continuamente. Si no ves tu área, escríbenos — probablemente ya tengamos experiencia en ella.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuál es el coste de una implementación?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Depende del caso de uso y la complejidad. Lo que siempre garantizamos es que antes de hablar de precio, te mostramos el ROI esperado. Cada propuesta está vinculada a métricas de negocio concretas para que puedas evaluar la inversión con criterio.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  var search     = document.getElementById('search');
+  var selArea    = document.getElementById('filter-area');
+  var selTipo    = document.getElementById('filter-tipo');
+  var selAuto    = document.getElementById('filter-auto');
+  var selBarrera = document.getElementById('filter-barrera');
+  var btnReset   = document.getElementById('btn-reset');
+  var countEl    = document.getElementById('count');
+  var emptyEl    = document.getElementById('empty-state');
+  var tbody      = document.querySelector('#agents-table tbody');
+
+  function filterTable() {
+    var q       = search.value.toLowerCase().trim();
+    var area    = selArea.value;
+    var tipo    = selTipo.value;
+    var auto    = selAuto.value;
+    var barrera = selBarrera.value;
+
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    var visible = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var matchArea    = !area    || row.dataset.area    === area;
+      var matchTipo    = !tipo    || row.dataset.tipo    === tipo;
+      var matchAuto    = !auto    || row.dataset.auto    === auto;
+      var matchBarrera = !barrera || row.dataset.barrera === barrera;
+      var matchSearch  = !q      || (row.dataset.search || '').indexOf(q) !== -1;
+
+      var show = matchArea && matchTipo && matchAuto && matchBarrera && matchSearch;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
+    }
+
+    countEl.textContent = String(visible);
+    emptyEl.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  search.addEventListener('input', filterTable);
+  selArea.addEventListener('change', filterTable);
+  selTipo.addEventListener('change', filterTable);
+  selAuto.addEventListener('change', filterTable);
+  selBarrera.addEventListener('change', filterTable);
+
+  btnReset.addEventListener('click', function() {
+    search.value    = '';
+    selArea.value   = '';
+    selTipo.value   = '';
+    selAuto.value   = '';
+    selBarrera.value = '';
+    filterTable();
+  });
+
+  var faqBtns = document.querySelectorAll('.faq-question');
+  for (var j = 0; j < faqBtns.length; j++) {
+    faqBtns[j].addEventListener('click', function() {
+      var item   = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      var items  = document.querySelectorAll('.faq-item');
+      for (var k = 0; k < items.length; k++) {
+        items[k].classList.remove('open');
+      }
+      if (!isOpen) item.classList.add('open');
+    });
+  }
+</script>
+
+</Base>
