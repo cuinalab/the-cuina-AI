@@ -1,15 +1,14 @@
 ---
-title: "Cuánto cuesta no automatizar tu pyme Impacto económico y estratégico de la IA"
+title: "¿Cuánto cuesta no automatizar tu pyme Impacto económico y estratégico de la IA?"
 pubDate: "2026-03-26"
 category: Estrategia IA
 excerpt: "Descubre cuánto dinero pierden las pymes españolas sin automatización y cómo la IA mejora productividad y reduce costes ocultos estratégicamente."
 author: The Cuina AI
 image: ../assets/blog/post-cuanto-cuesta-no-automatizar-pymes-espanolas.jpg
-imageAlt: ""
+imageAlt: "../assets/blog/post-cuanto-cuesta-no-automatizar-pymes-espanolas.jpg"
 tags: ["automatización inteligente", "IA para pymes", "productividad pyme", "transformación digital", "reducción de costes"]
 readTime: "6"
 ---
-```markdown
 # Cuánto cuesta no automatizar tu pyme: Impacto económico y estratégico de la IA
 
 Las pymes españolas están perdiendo miles de euros cada año sin percatarse, simplemente por no automatizar las tareas manuales y repetitivas que consumen incontables horas valiosas. ¿Responder emails, actualizar bases de datos o generar informes? Solo por estas actividades, una pyme con 5 empleados puede perder hasta 15.000 € anuales en tiempo improductivo.  
