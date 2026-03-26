@@ -133,4 +133,3 @@ Ignorar la automatización en tu pyme es seguir pasando por alto miles de euros 
 
 *Tags:* automatización inteligente, IA para pymes, productividad pyme, transformación digital, reducción de costes  
 *Tiempo estimado lectura:* 6 minutos  
-```
