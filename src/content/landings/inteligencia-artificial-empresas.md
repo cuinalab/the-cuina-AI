@@ -1,3 +1,4 @@
+---
 title: "Inteligencia artificial en empresas: qué es, para qué sirve y cómo empezar"
 date: "2026-03-28"
 excerpt: "Descubre qué es la inteligencia artificial en empresas, cómo se aplica realmente y por qué es clave para mejorar eficiencia, reducir costes y tomar mejores decisiones en pymes y medianas empresas."
