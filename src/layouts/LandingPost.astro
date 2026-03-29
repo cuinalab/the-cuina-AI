@@ -8,30 +8,18 @@ interface Props {
   metaDescription?: string;
   image?:           string;
   imageAlt?:        string;
-
-  // CTAs modulares — todos apuntan a #contacto por defecto
   ctaPrimary?:      string;
   ctaPrimaryUrl?:   string;
   ctaFinal?:        string;
   ctaFinalUrl?:     string;
-
-  // Bloque de autoridad opcional
   authorityBadges?: string[];
-
-  // Banner final configurable
   bannerTitle?:     string;
   bannerBody?:      string;
-
-  // FAQs — schema automático via Base + renderizado en página
   faqs?:            { question: string; answer: string }[];
-
-  // Metadatos editoriales
   category?:        string;
   tags?:            string[];
   date?:            string;
   dateModified?:    string;
-
-  // Tipo de schema: WebPage (default) | Service | LocalBusiness
   schemaType?:      'WebPage' | 'Service' | 'LocalBusiness';
 }
 
@@ -41,28 +29,24 @@ const {
   metaDescription = excerpt,
   image,
   imageAlt        = '',
-
-  ctaPrimary    = 'Solicita tu diagnóstico gratuito',
-  ctaPrimaryUrl = '#contacto',
+  ctaPrimary      = 'Solicita tu diagnóstico gratuito',
+  ctaPrimaryUrl   = '#contacto',
   ctaFinal,
   ctaFinalUrl,
-
   authorityBadges = [],
-
-  bannerTitle = '¿Impulsamos la IA en tu negocio?',
-  bannerBody  = 'En solo 30 días podrías tener una solución de IA funcionando y con métricas reales. <strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.',
-
-  faqs         = [],
-  category     = '',
-  tags         = [],
-  date         = '',
+  bannerTitle     = '¿Impulsamos la IA en tu negocio?',
+  bannerBody      = 'En solo 30 días podrías tener una solución de IA funcionando y con métricas reales. <strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.',
+  faqs            = [],
+  category        = '',
+  tags            = [],
+  date            = '',
   dateModified,
-  schemaType   = 'WebPage',
+  schemaType      = 'WebPage',
 } = Astro.props;
 
-const pageUrl = Astro.url.href;
-
-// CTAs: el botón del banner hereda del primario si no se especifica uno distinto
+const pageUrl      = Astro.site
+                       ? new URL(Astro.url.pathname, Astro.site).href
+                       : Astro.url.href;
 const finalBtnText = ctaFinal    ?? ctaPrimary;
 const finalBtnUrl  = ctaFinalUrl ?? ctaPrimaryUrl;
 
@@ -89,51 +73,54 @@ const pageSchema = {
   faqs={faqs}
 >
 
-  <div class="landing-page">
+  <div class="post-page">
 
     <!-- HERO -->
-    <header class="landing-hero">
-      {category && <span class="landing-tag">{category}</span>}
+    <header class="post-hero">
+      <div class="post-meta">
+        {category && <span class="post-tag">{category}</span>}
+      </div>
       <h1>{title}</h1>
-      {excerpt && <p class="landing-excerpt">{excerpt}</p>}
+      {excerpt && <p class="post-excerpt">{excerpt}</p>}
 
-      <!-- BADGES DE AUTORIDAD -->
       {authorityBadges.length > 0 && (
         <ul class="authority-badges" aria-label="Credenciales">
           {authorityBadges.map(b => <li class="authority-badge">{b}</li>)}
         </ul>
       )}
 
-      <a href={ctaPrimaryUrl} class="landing-cta-btn">{ctaPrimary}</a>
+      <a href={ctaPrimaryUrl} class="btn-cta" style="margin-top:2rem">{ctaPrimary}</a>
     </header>
 
     <!-- IMAGEN -->
     {image && (
-      <div class="landing-cover">
-        <img src={image} alt={imageAlt} class="landing-cover-img" loading="lazy" width="1200" height="630" />
+      <div class="post-cover">
+        <img src={image} alt={imageAlt} class="post-cover-img" loading="lazy" width="1200" height="630" />
       </div>
     )}
 
     <!-- CONTENIDO MARKDOWN -->
-    <article class="landing-body">
+    <article class="post-body">
       <slot />
     </article>
 
     <!-- FAQ -->
     {faqs.length > 0 && (
       <section class="faq-section" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Preguntas frecuentes</h2>
-        <div class="faq-list">
-          {faqs.map((f, i) => (
-            <div class="faq-item" id={`faq-${i}`}>
-              <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${i}`}>
-                {f.question}
-              </button>
-              <div class="faq-answer" id={`faq-answer-${i}`} role="region">
-                <p>{f.answer}</p>
+        <div class="post-body" style="padding-top:0">
+          <h2 id="faq-heading">Preguntas frecuentes</h2>
+          <div class="faq-list">
+            {faqs.map((f, i) => (
+              <div class="faq-item" id={`faq-${i}`}>
+                <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${i}`}>
+                  {f.question}
+                </button>
+                <div class="faq-answer" id={`faq-answer-${i}`} role="region">
+                  <p>{f.answer}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     )}
@@ -168,7 +155,6 @@ const pageSchema = {
         </div>
 
         <form class="form-grid" id="contact-form-landing" novalidate>
-
           <div class="form-row">
             <div class="form-group">
               <label for="cl-name">Nombre *</label>
@@ -179,7 +165,6 @@ const pageSchema = {
               <input id="cl-company" type="text" name="company" placeholder="Tu empresa" required autocomplete="organization">
             </div>
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="cl-role">Cargo *</label>
@@ -190,13 +175,11 @@ const pageSchema = {
               <input id="cl-email" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
             </div>
           </div>
-
           <div class="form-group">
             <label for="cl-message">Tu consulta</label>
             <textarea id="cl-message" name="message" placeholder="Cuéntanos tu caso..."></textarea>
           </div>
 
-          <!-- Honeypot anti-spam -->
           <input type="text" name="website" tabindex="-1" aria-hidden="true" style="display:none">
 
           <p class="form-error"   id="cl-error"   role="alert"  aria-live="polite" hidden></p>
@@ -207,36 +190,12 @@ const pageSchema = {
           <button type="submit" class="btn-cta btn-cta--full">
             Solicitar llamada
           </button>
-
         </form>
       </div>
     </div>
   </section>
 
   <style>
-    /* ── Clases landing-* ────────────────────────────────────────── */
-    .landing-page    { }
-    .landing-hero    { }
-    .landing-tag     { }
-    .landing-excerpt { }
-    .landing-cover   { }
-    .landing-cover-img { }
-    .landing-body    { }
-
-    /* CTA hero */
-    .landing-cta-btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--color-accent, #000);
-      color: #fff;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .landing-cta-btn:hover { opacity: 0.85; }
-
     /* Badges de autoridad */
     .authority-badges {
       display: flex;
@@ -244,19 +203,51 @@ const pageSchema = {
       gap: 0.5rem;
       list-style: none;
       padding: 0;
-      margin: 1rem 0;
+      margin: 1.25rem auto 0;
+      justify-content: center;
+      max-width: 700px;
     }
     .authority-badge {
-      background: var(--surface-2, #f0f0f0);
+      background: rgba(0,200,150,0.08);
+      border: 1px solid rgba(0,200,150,0.2);
+      color: var(--accent);
       border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.85rem;
-      font-weight: 600;
+      padding: 0.25rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
 
     /* FAQ */
-    .faq-section { padding: 60px 0; }
-    .faq-answer  { display: none; padding: 0 0 1rem 0; }
+    .faq-section { background: #fff; }
+    .faq-list    { margin-top: 2rem; }
+    .faq-item    { border-bottom: 1px solid #ebebeb; }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 0;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0d0d0d;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer  { display: none; padding: 0 0 1.25rem; }
+    .faq-answer p { margin: 0; font-size: 0.97rem; color: #444; line-height: 1.8; }
     .faq-item.open .faq-answer { display: block; }
 
     /* CTA banner */
@@ -276,7 +267,7 @@ const pageSchema = {
       margin-bottom: var(--space-sm);
     }
     .cta-banner__body {
-      color: var(--text);
+      color: rgba(255,255,255,0.8);
       margin-bottom: 36px;
       font-size: var(--text-md);
     }
@@ -287,10 +278,14 @@ const pageSchema = {
     .btn-cta--full         { width: 100%; justify-content: center; padding: 14px; }
     .form-error            { color: #c0392b; font-size: 0.9rem; }
     .form-success          { color: #27ae60; font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      .cta-banner .container { padding: 48px 24px; }
+    }
   </style>
 
   <script>
-    // FAQ: gestiona aria-expanded
+    // FAQ toggle
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item   = btn.closest('.faq-item');
@@ -306,7 +301,7 @@ const pageSchema = {
       });
     });
 
-    // Formulario de contacto
+    // Formulario
     const form   = document.getElementById('contact-form-landing') as HTMLFormElement | null;
     const errEl  = document.getElementById('cl-error');
     const succEl = document.getElementById('cl-success');
@@ -314,11 +309,8 @@ const pageSchema = {
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
-
-      // Honeypot
       if (formData.get('website')) return;
-
-      if (errEl)  { errEl.hidden  = true; errEl.textContent = ''; }
+      if (errEl)  { errEl.hidden = true; errEl.textContent = ''; }
       if (succEl) { succEl.hidden = true; }
 
       const payload = {
