@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import '../styles/blog.css';
 
 interface Props {
   title:            string;
@@ -37,35 +38,54 @@ const schema = {
 
 <Base title={`${title} · The Cuina AI`} description={metaDescription || excerpt} schema={schema}>
 
-  <div class="landing-page">
+  <div class="post-page">
 
     <!-- HERO -->
-    <header class="landing-hero">
+    <header class="post-hero">
       {category && <span class="post-tag">{category}</span>}
       <h1>{title}</h1>
-      {excerpt && <p class="landing-excerpt">{excerpt}</p>}
-      {cta && <a href={ctaUrl} class="landing-cta">{cta}</a>}
+      {excerpt && <p class="post-excerpt">{excerpt}</p>}
+      {cta && (
+        <a href={ctaUrl} class="landing-cta-btn">{cta}</a>
+      )}
     </header>
 
     <!-- IMAGEN -->
     {image && (
-      <div class="landing-cover">
-        <img src={image} alt={imageAlt} loading="lazy" />
+      <div class="post-cover">
+        <img src={image} alt={imageAlt} class="post-cover-img" loading="lazy" />
       </div>
     )}
 
     <!-- CONTENIDO MARKDOWN -->
-    <article class="landing-body">
+    <article class="post-body">
       <slot />
     </article>
 
     <!-- CTA FINAL -->
     {cta && (
-      <div class="landing-cta-bottom">
-        <a href={ctaUrl} class="landing-cta">{cta}</a>
+      <div class="share-row">
+        <a href={ctaUrl} class="landing-cta-btn">{cta}</a>
       </div>
     )}
 
   </div>
+
+  <style>
+    .landing-cta-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--color-accent, #000);
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .landing-cta-btn:hover {
+      opacity: 0.85;
+    }
+  </style>
 
 </Base>
