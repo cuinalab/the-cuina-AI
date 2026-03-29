@@ -71,6 +71,54 @@ const schema = {
 
   </div>
 
+  <!-- CTA CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="contacto-grid fade-in">
+        <div class="contacto-info">
+          <div class="section-label">Contacto</div>
+          <h2 class="section-title">¿Impulsamos la IA en tu <span style="color:var(--accent)">negocio</span>?</h2>
+          <p>Si deseas impulsar tu negocio con IA, completa el formulario y conecta con nosotros. ¡Te acompañamos a dar el siguiente paso!</p>
+          <ul class="contacto-features">
+            <li>Consultoría de IA 100% personalizada</li>
+            <li>Adaptación a los objetivos del negocio</li>
+            <li>Enfoque estratégico para maximizar el ROI</li>
+          </ul>
+        </div>
+        <form class="form-grid" id="contact-form-landing">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre *</label>
+              <input type="text" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label>Organización *</label>
+              <input type="text" name="company" placeholder="Tu empresa" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Cargo *</label>
+              <input type="text" name="role" placeholder="Tu cargo" required>
+            </div>
+            <div class="form-group">
+              <label>Correo *</label>
+              <input type="email" name="email" placeholder="tu@empresa.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tu consulta</label>
+            <textarea name="message" placeholder="Cuéntanos tu caso..."></textarea>
+          </div>
+          <input type="text" name="website" style="display:none">
+          <button type="submit" class="btn-cta" style="width:100%;justify-content:center;padding:14px;">
+            Solicitar llamada
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <style>
     .landing-cta-btn {
       display: inline-block;
@@ -87,5 +135,37 @@ const schema = {
       opacity: 0.85;
     }
   </style>
+
+  <script>
+    document.getElementById("contact-form-landing").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      if (formData.get("website")) return;
+      const payload = {
+        name: formData.get("name"),
+        company: formData.get("company"),
+        role: formData.get("role"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+        page: window.location.href,
+        submittedAt: new Date().toISOString()
+      };
+      try {
+        const response = await fetch("https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+          alert("Gracias. Hemos recibido tu solicitud.");
+          this.reset();
+        } else {
+          alert("Ha habido un error. Por favor, inténtalo de nuevo.");
+        }
+      } catch {
+        alert("Ha habido un error de conexión. Por favor, inténtalo de nuevo.");
+      }
+    });
+  </script>
 
 </Base>
