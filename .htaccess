@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# 1. Redirigir /contacto a la sección de la home
+# NE es fundamental para que el navegador reconozca el símbolo #
+RewriteRule ^contacto$ /#contacto [L,R=301,NE]
+
+# 2. Configurar página de error 404 personalizada
+# Asegúrate de que el archivo 404.html existe en la raíz
+ErrorDocument 404 /404.html
