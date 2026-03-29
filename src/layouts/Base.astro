@@ -18,7 +18,9 @@ interface Props {
 const {
   title,
   description,
-  canonical    = Astro.url.href,
+  canonical    = Astro.site
+                   ? new URL(Astro.url.pathname, Astro.site).href
+                   : Astro.url.href,
   ogImage      = '/assets/images/logo_ia_the_cuina.png',
   ogType       = 'website',
   schema,
