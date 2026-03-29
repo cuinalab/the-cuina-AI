@@ -6,7 +6,7 @@ metaDescription: "Automatización en empresas para reducir costes operativos y m
 image: /assets/IA/automatizacion-empresa.jpg
 imageAlt: "Empresa optimizando procesos y reduciendo costes mediante automatización"
 cta: "Solicitar diagnóstico de automatización"
-ctaUrl: #contacto
+ctaUrl: "#contacto"
 category: "Automatización"
 tags: ["automatizacion empresa", "automatizacion procesos", "eficiencia operativa"]
 ---
