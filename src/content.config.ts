@@ -19,7 +19,7 @@ const blog = defineCollection({
 });
 
 const landings = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/landings' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/IA' }),
   schema: z.object({
     title:           z.string(),
     date:            z.coerce.string(),
