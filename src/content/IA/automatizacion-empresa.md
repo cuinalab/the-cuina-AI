@@ -213,18 +213,6 @@ La automatización no arregla procesos malos. Los acelera.
 
 ---
 
-## CTA
-
-La mayoría de empresas ya tienen el problema.
-
-Simplemente no lo han medido.
-
-Si quieres saber dónde estás perdiendo tiempo y dinero:
-
-Solicita un diagnóstico y detecta tus oportunidades de automatización.
-
----
-
 ## FAQs
 
 ### ¿Qué es la automatización en una empresa?
