@@ -236,20 +236,6 @@ seguirán creciendo al ritmo de su equipo.
 
 ---
 
-## CTA
-
-Cada proceso que hoy depende de personas para tomar decisiones repetitivas es un límite.
-
-Y cada día que no lo transformas, ese límite crece.
-
-Solicita un diagnóstico de IA y detecta:
-
-- qué procesos deben evolucionar a agentes  
-- dónde tiene sentido aplicarlos  
-- qué impacto pueden generar en tu negocio  
-
----
-
 ## FAQs
 
 ### ¿Qué es un agente de inteligencia artificial?
