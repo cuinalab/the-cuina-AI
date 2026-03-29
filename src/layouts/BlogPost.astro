@@ -3,32 +3,36 @@
 import Base from './Base.astro';
 import '../styles/blog.css';
 
-
 interface Props {
-  title:        string;
-  excerpt:      string;
-  category:     string;
-  date:         string;
-  readTime:     string;
-  author?:      string;
-  authorImage?: string;   // ruta desde public/, ej: 
-  tags?:        string[];
-  image?:       string;
-  imageAlt?:    string;
+  title:         string;
+  excerpt:       string;
+  category:      string;
+  date:          string;
+  dateModified?: string;
+  readTime:      string;
+  author?:       string;
+  authorImage?:  string;
+  authorUrl?:    string;
+  tags?:         string[];
+  image?:        string;
+  imageAlt?:     string;
+  wordCount?:    number;
 }
-
 
 const {
   title,
   excerpt,
   category,
   date,
+  dateModified,
   readTime,
   author      = 'The Cuina AI',
   authorImage = '',
+  authorUrl   = '',
   tags        = [],
   image,
   imageAlt    = '',
+  wordCount,
 } = Astro.props;
 
 function formatDate(d: string) {
@@ -40,20 +44,47 @@ function formatDate(d: string) {
   } catch { return d; }
 }
 
-const dateDisplay = formatDate(date);
+const dateDisplay         = formatDate(date);
+const dateModifiedDisplay = dateModified ? formatDate(dateModified) : null;
+const pageUrl             = Astro.url.href;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": title,
-  "description": excerpt,
-  "datePublished": date,
-  "author": { "@type": "Organization", "name": author },
-  "publisher": { "@id": "https://www.thecuina.com/#sobre-the-cuina" }
+const blogPostingSchema = {
+  '@context':    'https://schema.org',
+  '@type':       'BlogPosting',
+  headline:      title,
+  description:   excerpt,
+  datePublished: date,
+  ...(dateModified && { dateModified }),
+  ...(image        && { image: new URL(image, Astro.site ?? pageUrl).href }),
+  ...(wordCount    && { wordCount }),
+  ...(tags.length  && { keywords: tags.join(', ') }),
+  url:           pageUrl,
+  inLanguage:    'es',
+  author: authorUrl
+    ? { '@type': 'Person',       name: author, url: authorUrl }
+    : { '@type': 'Organization', name: author },
+  publisher: { '@id': 'https://www.thecuina.com/#sobre-the-cuina' },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type':    'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',   item: 'https://www.thecuina.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog',     item: 'https://www.thecuina.com/blog' },
+    { '@type': 'ListItem', position: 3, name: category,   item: `https://www.thecuina.com/blog/categoria/${category.toLowerCase().replace(/\s+/g, '-')}` },
+    { '@type': 'ListItem', position: 4, name: title,      item: pageUrl },
+  ],
 };
 ---
 
-<Base title={`${title} · The Cuina AI`} description={excerpt} schema={schema}>
+<Base
+  title={`${title} · The Cuina AI`}
+  description={excerpt}
+  schema={[blogPostingSchema, breadcrumbSchema]}
+  ogType="article"
+  dateModified={dateModified}
+>
 
 <div class="post-page">
 
@@ -63,7 +94,12 @@ const schema = {
   <header class="post-hero">
     <div class="post-meta">
       <span class="post-tag">{category}</span>
-      <span class="post-chip">{dateDisplay}</span>
+      <time class="post-chip" datetime={date}>{dateDisplay}</time>
+      {dateModifiedDisplay && (
+        <time class="post-chip post-chip--updated" datetime={dateModified}>
+          Actualizado: {dateModifiedDisplay}
+        </time>
+      )}
       <span class="post-chip">{readTime} min de lectura</span>
     </div>
     <h1>{title}</h1>
@@ -73,17 +109,17 @@ const schema = {
   <!-- IMAGEN DESTACADA -->
   {image && (
     <div class="post-cover">
-      <img src={image} alt={imageAlt} class="post-cover-img" loading="lazy" />
+      <img src={image} alt={imageAlt} class="post-cover-img" loading="lazy" width="1200" height="630" />
     </div>
   )}
 
   <!-- CONTENIDO -->
-  <article class="post-body">
+  <article class="post-body" itemscope itemtype="https://schema.org/BlogPosting">
     <slot />
 
     <!-- TAGS -->
     {tags.length > 0 && (
-      <div class="tags-row">
+      <div class="tags-row" aria-label="Etiquetas del artículo">
         {tags.map(t => <span class="post-tag-item">{t}</span>)}
       </div>
     )}
@@ -91,21 +127,36 @@ const schema = {
     <!-- COMPARTIR -->
     <div class="share-row">
       <span class="share-label">Compartir</span>
-      <a class="share-btn" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`} target="_blank" rel="noopener">Twitter / X</a>
-      <a class="share-btn" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`} target="_blank" rel="noopener">LinkedIn</a>
+      <a
+        class="share-btn"
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en Twitter / X"
+      >Twitter / X</a>
+      <a
+        class="share-btn"
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en LinkedIn"
+      >LinkedIn</a>
     </div>
 
     <!-- AUTOR -->
-    <div class="author-box">
+    <div class="author-box" itemprop="author" itemscope itemtype="https://schema.org/Organization">
       <div class="author-av">
         {authorImage
-          ? <img src={authorImage} alt={author} class="author-img" />
-          : <span>💡</span>
+          ? <img src={authorImage} alt={author} class="author-img" width="48" height="48" />
+          : <span aria-hidden="true">💡</span>
         }
       </div>
       <div>
-        <div class="author-name">{author}</div>
-        <div class="author-bio">The Cuina AI es la consultora estratégica de IA que acompaña a PYMEs a adoptar inteligencia artificial con impacto real en negocio.</div>
+        <div class="author-name" itemprop="name">{author}</div>
+        <div class="author-bio">
+          The Cuina AI es la consultora estratégica de IA que acompaña a PYMEs
+          a adoptar inteligencia artificial con impacto real en negocio.
+        </div>
       </div>
     </div>
   </article>
@@ -128,34 +179,184 @@ const schema = {
 
 </div>
 
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container">
+    <h2 class="cta-banner__title">¿Impulsamos la IA en tu negocio?</h2>
+    <p class="cta-banner__body">
+      En solo 30 días podrías tener una solución de IA funcionando y con métricas reales.<br>
+      <strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.
+    </p>
+    <a href="#contacto" class="btn-cta">Solicita tu diagnóstico →</a>
+  </div>
+</div>
+
+<!-- FORMULARIO DE CONTACTO -->
+<section class="contacto" id="contacto" aria-labelledby="contacto-heading-blog">
+  <div class="container">
+    <div class="contacto-grid fade-in">
+
+      <div class="contacto-info">
+        <div class="section-label">Contacto</div>
+        <h2 id="contacto-heading-blog" class="section-title section-title--light">
+          ¿Impulsamos la IA en tu <span class="text-accent">negocio</span>?
+        </h2>
+        <p>Si deseas impulsar tu negocio con IA, completa el formulario y conecta con nosotros. ¡Te acompañamos a dar el siguiente paso!</p>
+        <ul class="contacto-features">
+          <li>Consultoría de IA 100% personalizada</li>
+          <li>Adaptación a los objetivos del negocio</li>
+          <li>Enfoque estratégico para maximizar el ROI</li>
+        </ul>
+      </div>
+
+      <form class="form-grid" id="contact-form-blog" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cb-name">Nombre *</label>
+            <input id="cb-name" type="text" name="name" placeholder="Tu nombre" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="cb-company">Organización *</label>
+            <input id="cb-company" type="text" name="company" placeholder="Tu empresa" required autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cb-role">Cargo *</label>
+            <input id="cb-role" type="text" name="role" placeholder="Tu cargo" required autocomplete="organization-title">
+          </div>
+          <div class="form-group">
+            <label for="cb-email">Correo *</label>
+            <input id="cb-email" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cb-message">Tu consulta</label>
+          <textarea id="cb-message" name="message" placeholder="Cuéntanos tu caso..."></textarea>
+        </div>
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="website" tabindex="-1" aria-hidden="true" style="display:none">
+
+        <p class="form-error"   id="cb-error"   role="alert"  aria-live="polite" hidden></p>
+        <p class="form-success" id="cb-success" role="status" aria-live="polite" hidden>
+          Gracias. Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.
+        </p>
+
+        <button type="submit" class="btn-cta btn-cta--full">
+          Solicitar llamada
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title--light { color: #fff; }
+  .text-accent           { color: var(--accent); }
+  .btn-cta--full         { width: 100%; justify-content: center; padding: 14px; }
+  .form-error            { color: #c0392b; font-size: 0.9rem; }
+  .form-success          { color: #27ae60; font-size: 0.9rem; }
+
+  .cta-banner { background: #fff; padding: 80px 0; text-align: center; }
+  .cta-banner .container {
+    background: linear-gradient(135deg, rgba(0,51,39,.88), rgba(0,9,7,.68));
+    border: 1px solid var(--nav-border);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+    padding: 72px 48px;
+  }
+  .cta-banner__title {
+    color: #fff;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: var(--weight-black);
+    letter-spacing: -.025em;
+    margin-bottom: var(--space-sm);
+  }
+  .cta-banner__body {
+    color: var(--text);
+    margin-bottom: 36px;
+    font-size: var(--text-md);
+  }
+</style>
+
 <script>
   // Progress bar
   window.addEventListener('scroll', () => {
-    const d = document.documentElement;
-    const progress = d.scrollTop / (d.scrollHeight - d.clientHeight);
+    const d   = document.documentElement;
+    const pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
     const bar = document.getElementById('read-progress');
-    if (bar) bar.style.width = (progress * 100) + '%';
+    if (bar) bar.style.width = (pct * 100) + '%';
   });
 
   // Load related posts
   async function loadRelated() {
     try {
-      const res = await fetch('/blog-posts.json');
+      const res  = await fetch('/blog-posts.json');
       if (!res.ok) return;
-      const posts = await res.json();
-      const slug = window.location.pathname.split('/').pop();
+      const posts  = await res.json();
+      const slug   = window.location.pathname.split('/').filter(Boolean).pop();
       const others = posts.filter((p: any) => p.slug !== slug).slice(0, 2);
-      const grid = document.getElementById('related-grid');
+      const grid   = document.getElementById('related-grid');
       if (!grid || others.length === 0) return;
       grid.innerHTML = others.map((p: any) => `
         <a class="rel-card" href="${p.url}">
-          <span class="post-tag">${p.category || 'Article'}</span>
+          <span class="post-tag">${p.category || 'Artículo'}</span>
           <h4>${p.title}</h4>
         </a>
       `).join('');
     } catch {}
   }
   loadRelated();
+
+  // Formulario de contacto
+  const form   = document.getElementById('contact-form-blog') as HTMLFormElement | null;
+  const errEl  = document.getElementById('cb-error');
+  const succEl = document.getElementById('cb-success');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    // Honeypot
+    if (formData.get('website')) return;
+
+    if (errEl)  { errEl.hidden  = true; errEl.textContent = ''; }
+    if (succEl) { succEl.hidden = true; }
+
+    const payload = {
+      name:        formData.get('name'),
+      company:     formData.get('company'),
+      role:        formData.get('role'),
+      email:       formData.get('email'),
+      message:     formData.get('message'),
+      page:        window.location.href,
+      submittedAt: new Date().toISOString(),
+    };
+
+    try {
+      const res = await fetch('https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+      if (res.ok) {
+        if (succEl) succEl.hidden = false;
+        form.reset();
+      } else {
+        throw new Error(`HTTP ${res.status}`);
+      }
+    } catch {
+      if (errEl) {
+        errEl.hidden      = false;
+        errEl.textContent = 'Ha habido un error. Por favor, inténtalo de nuevo.';
+      }
+    }
+  });
 </script>
 
 </Base>

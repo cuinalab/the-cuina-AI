@@ -8,11 +8,31 @@ interface Props {
   metaDescription?: string;
   image?:           string;
   imageAlt?:        string;
-  cta?:             string;
-  ctaUrl?:          string;
+
+  // CTAs modulares — todos apuntan a #contacto por defecto
+  ctaPrimary?:      string;
+  ctaPrimaryUrl?:   string;
+  ctaFinal?:        string;
+  ctaFinalUrl?:     string;
+
+  // Bloque de autoridad opcional
+  authorityBadges?: string[];
+
+  // Banner final configurable
+  bannerTitle?:     string;
+  bannerBody?:      string;
+
+  // FAQs — schema automático via Base + renderizado en página
+  faqs?:            { question: string; answer: string }[];
+
+  // Metadatos editoriales
   category?:        string;
   tags?:            string[];
   date?:            string;
+  dateModified?:    string;
+
+  // Tipo de schema: WebPage (default) | Service | LocalBusiness
+  schemaType?:      'WebPage' | 'Service' | 'LocalBusiness';
 }
 
 const {
@@ -21,69 +41,124 @@ const {
   metaDescription = excerpt,
   image,
   imageAlt        = '',
-  cta             = 'Solicitar información',
-  ctaUrl          = '#contacto',
-  category        = '',
-  tags            = [],
-  date            = '',
+
+  ctaPrimary    = 'Solicita tu diagnóstico gratuito',
+  ctaPrimaryUrl = '#contacto',
+  ctaFinal,
+  ctaFinalUrl,
+
+  authorityBadges = [],
+
+  bannerTitle = '¿Impulsamos la IA en tu negocio?',
+  bannerBody  = 'En solo 30 días podrías tener una solución de IA funcionando y con métricas reales. <strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.',
+
+  faqs         = [],
+  category     = '',
+  tags         = [],
+  date         = '',
+  dateModified,
+  schemaType   = 'WebPage',
 } = Astro.props;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": title,
-  "description": metaDescription || excerpt,
+const pageUrl = Astro.url.href;
+
+// CTAs: el botón del banner hereda del primario si no se especifica uno distinto
+const finalBtnText = ctaFinal    ?? ctaPrimary;
+const finalBtnUrl  = ctaFinalUrl ?? ctaPrimaryUrl;
+
+const pageSchema = {
+  '@context':  'https://schema.org',
+  '@type':     schemaType,
+  name:        title,
+  description: metaDescription || excerpt,
+  url:         pageUrl,
+  inLanguage:  'es',
+  ...(date         && { datePublished: date }),
+  ...(dateModified && { dateModified }),
+  ...(image        && { image: new URL(image, Astro.site ?? pageUrl).href }),
+  provider: { '@id': 'https://www.thecuina.com/#sobre-the-cuina' },
 };
 ---
 
-<Base title={`${title} · The Cuina AI`} description={metaDescription || excerpt} schema={schema}>
+<Base
+  title={`${title} · The Cuina AI`}
+  description={metaDescription || excerpt}
+  schema={pageSchema}
+  ogType="article"
+  dateModified={dateModified}
+  faqs={faqs}
+>
 
-  <div class="post-page">
+  <div class="landing-page">
 
     <!-- HERO -->
-    <header class="post-hero">
-      {category && <span class="post-tag">{category}</span>}
+    <header class="landing-hero">
+      {category && <span class="landing-tag">{category}</span>}
       <h1>{title}</h1>
-      {excerpt && <p class="post-excerpt">{excerpt}</p>}
-      {cta && (
-        <a href={ctaUrl} class="landing-cta-btn">{cta}</a>
+      {excerpt && <p class="landing-excerpt">{excerpt}</p>}
+
+      <!-- BADGES DE AUTORIDAD -->
+      {authorityBadges.length > 0 && (
+        <ul class="authority-badges" aria-label="Credenciales">
+          {authorityBadges.map(b => <li class="authority-badge">{b}</li>)}
+        </ul>
       )}
+
+      <a href={ctaPrimaryUrl} class="landing-cta-btn">{ctaPrimary}</a>
     </header>
 
     <!-- IMAGEN -->
     {image && (
-      <div class="post-cover">
-        <img src={image} alt={imageAlt} class="post-cover-img" loading="lazy" />
+      <div class="landing-cover">
+        <img src={image} alt={imageAlt} class="landing-cover-img" loading="lazy" width="1200" height="630" />
       </div>
     )}
 
     <!-- CONTENIDO MARKDOWN -->
-    <article class="post-body">
+    <article class="landing-body">
       <slot />
     </article>
 
-    <!-- CTA FINAL -->
-    {cta && (
-  <!-- CTA BANNER -->
-<div class="cta-banner">
-
-  <div class="container">
-    <h2 style="color:#fff;">¿Impulsamos la IA en tu negocio?</h2>
-    <p>En solo 30 días podrías tener una solución de IA funcionando y con métricas reales.<br><strong>Agenda una llamada gratuita</strong> y te enseñamos el mejor camino para tu negocio.</p>
-    <a href="#contacto" class="btn-cta">Contacta con nosotros →</a>
-  </div>
-</div>
+    <!-- FAQ -->
+    {faqs.length > 0 && (
+      <section class="faq-section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Preguntas frecuentes</h2>
+        <div class="faq-list">
+          {faqs.map((f, i) => (
+            <div class="faq-item" id={`faq-${i}`}>
+              <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${i}`}>
+                {f.question}
+              </button>
+              <div class="faq-answer" id={`faq-answer-${i}`} role="region">
+                <p>{f.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     )}
 
+    <!-- CTA BANNER FINAL -->
+    <div class="cta-banner">
+      <div class="container">
+        <h2 class="cta-banner__title">{bannerTitle}</h2>
+        <p class="cta-banner__body" set:html={bannerBody} />
+        <a href={finalBtnUrl} class="btn-cta">{finalBtnText} →</a>
+      </div>
+    </div>
+
   </div>
 
-  <!-- CTA CONTACTO -->
-  <section class="contacto" id="contacto">
+  <!-- FORMULARIO DE CONTACTO -->
+  <section class="contacto" id="contacto" aria-labelledby="contacto-heading-landing">
     <div class="container">
       <div class="contacto-grid fade-in">
+
         <div class="contacto-info">
           <div class="section-label">Contacto</div>
-          <h2 class="section-title" style="color:#fff";>¿Impulsamos la IA en tu <span style="color:var(--accent)">negocio</span>?</h2>
+          <h2 id="contacto-heading-landing" class="section-title section-title--light">
+            ¿Impulsamos la IA en tu <span class="text-accent">negocio</span>?
+          </h2>
           <p>Si deseas impulsar tu negocio con IA, completa el formulario y conecta con nosotros. ¡Te acompañamos a dar el siguiente paso!</p>
           <ul class="contacto-features">
             <li>Consultoría de IA 100% personalizada</li>
@@ -91,41 +166,64 @@ const schema = {
             <li>Enfoque estratégico para maximizar el ROI</li>
           </ul>
         </div>
-        <form class="form-grid" id="contact-form-landing">
+
+        <form class="form-grid" id="contact-form-landing" novalidate>
+
           <div class="form-row">
             <div class="form-group">
-              <label>Nombre *</label>
-              <input type="text" name="name" placeholder="Tu nombre" required>
+              <label for="cl-name">Nombre *</label>
+              <input id="cl-name" type="text" name="name" placeholder="Tu nombre" required autocomplete="given-name">
             </div>
             <div class="form-group">
-              <label>Organización *</label>
-              <input type="text" name="company" placeholder="Tu empresa" required>
+              <label for="cl-company">Organización *</label>
+              <input id="cl-company" type="text" name="company" placeholder="Tu empresa" required autocomplete="organization">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
-              <label>Cargo *</label>
-              <input type="text" name="role" placeholder="Tu cargo" required>
+              <label for="cl-role">Cargo *</label>
+              <input id="cl-role" type="text" name="role" placeholder="Tu cargo" required autocomplete="organization-title">
             </div>
             <div class="form-group">
-              <label>Correo *</label>
-              <input type="email" name="email" placeholder="tu@empresa.com" required>
+              <label for="cl-email">Correo *</label>
+              <input id="cl-email" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
             </div>
           </div>
+
           <div class="form-group">
-            <label>Tu consulta</label>
-            <textarea name="message" placeholder="Cuéntanos tu caso..."></textarea>
+            <label for="cl-message">Tu consulta</label>
+            <textarea id="cl-message" name="message" placeholder="Cuéntanos tu caso..."></textarea>
           </div>
-          <input type="text" name="website" style="display:none">
-          <button type="submit" class="btn-cta" style="width:100%;justify-content:center;padding:14px;">
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="website" tabindex="-1" aria-hidden="true" style="display:none">
+
+          <p class="form-error"   id="cl-error"   role="alert"  aria-live="polite" hidden></p>
+          <p class="form-success" id="cl-success" role="status" aria-live="polite" hidden>
+            Gracias. Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.
+          </p>
+
+          <button type="submit" class="btn-cta btn-cta--full">
             Solicitar llamada
           </button>
+
         </form>
       </div>
     </div>
   </section>
 
   <style>
+    /* ── Clases landing-* ────────────────────────────────────────── */
+    .landing-page    { }
+    .landing-hero    { }
+    .landing-tag     { }
+    .landing-excerpt { }
+    .landing-cover   { }
+    .landing-cover-img { }
+    .landing-body    { }
+
+    /* CTA hero */
     .landing-cta-btn {
       display: inline-block;
       margin-top: 1.5rem;
@@ -137,52 +235,119 @@ const schema = {
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    .landing-cta-btn:hover {
-      opacity: 0.85;
+    .landing-cta-btn:hover { opacity: 0.85; }
+
+    /* Badges de autoridad */
+    .authority-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .authority-badge {
+      background: var(--surface-2, #f0f0f0);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
 
-.cta-banner { background: #fff; padding: 80px 0; text-align: center; }
-.cta-banner .container {
-  background: linear-gradient(135deg, rgba(0,51,39,.88), rgba(0,9,7,.68));
-  border: 1px solid var(--nav-border);
-  box-shadow: var(--shadow-md);
-  border-radius: var(--radius-lg);
-  padding-top: 72px;
-  padding-bottom: 72px;
-}
-.cta-banner h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: var(--weight-black); letter-spacing: -.025em; margin-bottom: var(--space-sm); }
-.cta-banner p { color: var(--text); margin-bottom: 36px; font-size: var(--text-md); font-weight: var(--weight-regular); }
+    /* FAQ */
+    .faq-section { padding: 60px 0; }
+    .faq-answer  { display: none; padding: 0 0 1rem 0; }
+    .faq-item.open .faq-answer { display: block; }
 
+    /* CTA banner */
+    .cta-banner { background: #fff; padding: 80px 0; text-align: center; }
+    .cta-banner .container {
+      background: linear-gradient(135deg, rgba(0,51,39,.88), rgba(0,9,7,.68));
+      border: 1px solid var(--nav-border);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      padding: 72px 48px;
+    }
+    .cta-banner__title {
+      color: #fff;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: var(--weight-black);
+      letter-spacing: -.025em;
+      margin-bottom: var(--space-sm);
+    }
+    .cta-banner__body {
+      color: var(--text);
+      margin-bottom: 36px;
+      font-size: var(--text-md);
+    }
+
+    /* Contacto */
+    .section-title--light { color: #fff; }
+    .text-accent           { color: var(--accent); }
+    .btn-cta--full         { width: 100%; justify-content: center; padding: 14px; }
+    .form-error            { color: #c0392b; font-size: 0.9rem; }
+    .form-success          { color: #27ae60; font-size: 0.9rem; }
   </style>
 
   <script>
-    document.getElementById("contact-form-landing").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      if (formData.get("website")) return;
-      const payload = {
-        name: formData.get("name"),
-        company: formData.get("company"),
-        role: formData.get("role"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-        page: window.location.href,
-        submittedAt: new Date().toISOString()
-      };
-      try {
-        const response = await fetch("https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
+    // FAQ: gestiona aria-expanded
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = item?.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
         });
-        if (response.ok) {
-          alert("Gracias. Hemos recibido tu solicitud.");
-          this.reset();
+        if (!isOpen && item) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Formulario de contacto
+    const form   = document.getElementById('contact-form-landing') as HTMLFormElement | null;
+    const errEl  = document.getElementById('cl-error');
+    const succEl = document.getElementById('cl-success');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      // Honeypot
+      if (formData.get('website')) return;
+
+      if (errEl)  { errEl.hidden  = true; errEl.textContent = ''; }
+      if (succEl) { succEl.hidden = true; }
+
+      const payload = {
+        name:        formData.get('name'),
+        company:     formData.get('company'),
+        role:        formData.get('role'),
+        email:       formData.get('email'),
+        message:     formData.get('message'),
+        page:        window.location.href,
+        submittedAt: new Date().toISOString(),
+      };
+
+      try {
+        const res = await fetch('https://n8n.srv1124642.hstgr.cloud/webhook/lead-thecuina', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload),
+        });
+        if (res.ok) {
+          if (succEl) succEl.hidden = false;
+          form.reset();
         } else {
-          alert("Ha habido un error. Por favor, inténtalo de nuevo.");
+          throw new Error(`HTTP ${res.status}`);
         }
       } catch {
-        alert("Ha habido un error de conexión. Por favor, inténtalo de nuevo.");
+        if (errEl) {
+          errEl.hidden      = false;
+          errEl.textContent = 'Ha habido un error. Por favor, inténtalo de nuevo.';
+        }
       }
     });
   </script>
