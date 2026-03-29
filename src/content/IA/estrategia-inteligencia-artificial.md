@@ -3,7 +3,7 @@ title: "Estrategia de inteligencia artificial en empresas: cómo decidir dónde 
 date: "2026-03-29"
 excerpt: "Define una estrategia de inteligencia artificial clara, prioriza correctamente y evita inversiones sin retorno. Framework práctico para directivos."
 metaDescription: "Estrategia de inteligencia artificial en empresas: cómo definir prioridades, tomar decisiones y convertir la IA en ventaja competitiva real."
-image: /assets/landings/estrategia-inteligencia-artificial.jpg
+image: /assets/IA/estrategia-inteligencia-artificial.jpg
 imageAlt: "Equipo directivo tomando decisiones estratégicas sobre inteligencia artificial en una empresa moderna"
 cta: "Solicitar diagnóstico de IA"
 ctaUrl: "#contacto"
