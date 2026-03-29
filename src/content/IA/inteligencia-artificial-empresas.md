@@ -6,7 +6,7 @@ metaDescription: "Guía completa sobre inteligencia artificial en empresas: qué
 image: /assets/images/IA/inteligencia-artificial-empresas.jpg
 imageAlt: "Oficina moderna de empresa utilizando inteligencia artificial en procesos de negocio"
 cta: "Solicitar diagnóstico de IA"
-ctaUrl: #contacto
+ctaUrl: "#contacto"
 category: "IA Empresas"
 tags: ["inteligencia artificial", "ia empresas", "ia pymes"]
 ---
