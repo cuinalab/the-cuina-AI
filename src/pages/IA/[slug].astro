@@ -4,7 +4,6 @@ import LandingPost from '../../layouts/LandingPost.astro';
 
 export async function getStaticPaths() {
   const allLandings = await getCollection('landings');
-
   return allLandings.map(landing => ({
     params: { slug: landing.id },
     props:  { landing },
@@ -12,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { landing } = Astro.props;
-const { Content } = await render(landing);
+const { Content }  = await render(landing);
 
 const {
   title           = 'Landing',
@@ -21,10 +20,16 @@ const {
   image,
   imageAlt        = '',
   cta             = 'Solicitar información',
-  ctaUrl          = '/contacto',
+  ctaUrl          = '#contacto',
   category        = '',
   tags            = [],
   date            = '',
+  dateModified,
+  authorityBadges = [],
+  bannerTitle,
+  bannerBody,
+  faqs            = [],
+  schemaType,
 } = landing.data;
 ---
 
@@ -34,11 +39,17 @@ const {
   metaDescription={metaDescription}
   image={image}
   imageAlt={imageAlt}
-  cta={cta}
-  ctaUrl={ctaUrl}
+  ctaPrimary={cta}
+  ctaPrimaryUrl={ctaUrl}
   category={category}
   tags={tags}
   date={date}
+  dateModified={dateModified}
+  authorityBadges={authorityBadges}
+  bannerTitle={bannerTitle}
+  bannerBody={bannerBody}
+  faqs={faqs}
+  schemaType={schemaType}
 >
   <Content />
 </LandingPost>
