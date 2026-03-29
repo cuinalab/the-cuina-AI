@@ -3,10 +3,10 @@ title: "Inteligencia artificial en empresas: qué es, para qué sirve y cómo em
 date: "2026-03-28"
 excerpt: "Descubre qué es la inteligencia artificial en empresas, cómo se aplica realmente y por qué es clave para mejorar eficiencia, reducir costes y tomar mejores decisiones en pymes y medianas empresas."
 metaDescription: "Guía completa sobre inteligencia artificial en empresas: qué es, para qué sirve, beneficios reales y cómo empezar sin errores. Enfocado a pymes y directivos."
-image: /assets/images/bg-1.png
+image: /assets/images/IA/inteligencia-artificial-empresas.jpg
 imageAlt: "Oficina moderna de empresa utilizando inteligencia artificial en procesos de negocio"
 cta: "Solicitar diagnóstico de IA"
-ctaUrl: /contacto
+ctaUrl: #contacto
 category: "IA Empresas"
 tags: ["inteligencia artificial", "ia empresas", "ia pymes"]
 ---
